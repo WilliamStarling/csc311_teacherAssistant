@@ -1,0 +1,14 @@
+package nodes;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class AssignmentTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}
