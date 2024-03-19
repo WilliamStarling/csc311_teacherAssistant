@@ -1,4 +1,4 @@
-package system;
+package domain;
 import java.util.LinkedList;
 
 import nodes.Assignment;
