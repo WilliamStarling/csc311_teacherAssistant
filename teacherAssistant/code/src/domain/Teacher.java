@@ -1,4 +1,4 @@
-package system;
+package domain;
 import java.util.LinkedList;
 
 public class Teacher {

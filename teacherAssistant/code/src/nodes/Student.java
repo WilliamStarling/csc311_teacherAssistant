@@ -1,4 +1,5 @@
 package nodes;
+
 import java.util.LinkedList;
 
 public class Student {

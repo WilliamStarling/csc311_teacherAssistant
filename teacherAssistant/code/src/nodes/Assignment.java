@@ -1,5 +1,6 @@
 package nodes;
 
+
 public class Assignment {
 
 	// Assignment attributes

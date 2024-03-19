@@ -1,5 +1,8 @@
-package system;
+package application;
 
+import domain.ClassRoster;
+import domain.SeatingChart;
+import domain.Teacher;
 import nodes.Assignment;
 import nodes.Student;
 
