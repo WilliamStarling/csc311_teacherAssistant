@@ -3,8 +3,8 @@ package application;
 import domain.ClassRoster;
 import domain.SeatingChart;
 import domain.Teacher;
-import nodes.Assignment;
-import nodes.Student;
+import foundation.Assignment;
+import foundation.Student;
 
 public class Control {
 

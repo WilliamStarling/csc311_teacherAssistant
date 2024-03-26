@@ -1,6 +1,6 @@
 package domain;
 
-import nodes.Student;
+import foundation.Student;
 
 public class SeatingChart {
 

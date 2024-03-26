@@ -1,4 +1,4 @@
-package nodes;
+package foundation;
 
 import java.util.LinkedList;
 
