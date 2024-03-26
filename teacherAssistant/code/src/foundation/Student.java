@@ -1,4 +1,4 @@
-package nodes;
+package foundation;
 
 import java.util.LinkedList;
 
@@ -37,6 +37,11 @@ public class Student {
 
 	public void setAbsences(int numbAbsences) {
 		f_absences = numbAbsences;
+	}
+	
+	public String getName()
+	{
+		return f_name;
 	}
 
 	public float getGrade() {

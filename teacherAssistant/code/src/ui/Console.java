@@ -1,4 +1,4 @@
-package textui;
+package ui;
 public class Console {
 
 	public void displayLogin() {
