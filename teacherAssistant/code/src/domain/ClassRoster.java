@@ -10,8 +10,6 @@ public class ClassRoster {
 	private LinkedList f_chartList;
 	private TreeMap<String, Student> f_studentList;
 	private TreeMap<String, Assignment> f_assignmentList;
-	private Student student;
-	private SeatingChart seatingChart;
 
 	/*
 	 * This method is the constructor for the classRoster class for the student. 
@@ -36,12 +34,12 @@ public class ClassRoster {
 	}
 
 	/*
-	 * This is adds a new student to the list.
+	 * This creates a new student and adds them the student list.
 	 * 
-	 * @param newStudent: the student object that needs to be added to the list.
+	 * @param name: the name of the new object being added.
 	 */
-	public void addStudent(Student newStudent) {
-		f_studentList.put(newStudent.getName(), newStudent);
+	public void addStudent(String name) {
+		f_studentList.put(name, new Student(name));
 	}
 	
 	/*
