@@ -14,10 +14,14 @@ public class Student {
 
 	private LinkedList f_gradeList = new LinkedList();
 
-	public Student(String name, String notes, int absences) {
+	/*
+	 * The constructor. Only takes the name of the student for simplicities sake.
+	 * The other values are set to default values and can be changed after it's creation.
+	 */
+	public Student(String name) {
 		f_name = name;
-		f_notes = notes;
-		f_absences = absences;
+		f_absences = 0;
+		f_notes = "Typical student.";
 	}
 
 	public void setName(String newName) {

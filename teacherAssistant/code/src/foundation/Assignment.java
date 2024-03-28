@@ -12,54 +12,19 @@ public class Assignment {
 	private String f_dueDate = "01/01/1970";
 
 	/*
-	 * This method is the constructor for the assignment class for the student
-	 * assignment list. It takes the parameters given and updates the data members
-	 * to hold these values.
+	 * This method is the constructor for the assignment class. It only takes the name of the
+	 * assignment, as this is the only value initially asked for, and the others can be updated
+	 * immedietly after creation of the object.
 	 * 
 	 * @param newName: The name of the assignment
-	 * 
-	 * @param newDescription: The description of the assignment
-	 * 
-	 * @param newType: What type of assignment it is (homework, quiz, test, etc.
-	 * user will select a type and then this will be translated into an integer by
-	 * upper layer.
-	 * 
-	 * @param possiblePoints: How many points the assignment is out of.
-	 * 
-	 * @param grade: How many points were given.
 	 */
-	public Assignment(String newName, String newDescription, int newType, 
-			int possiblePoints, String dueDate, float grade) {
+	public Assignment(String newName) {
 		f_name = newName;
-		f_description = newDescription;
-		f_type = newType;
-		f_possiblePoints = possiblePoints;
-		f_dueDate = dueDate;
-		f_grade = grade;
-	}
-	
-	/*
-	 * This is the constructor for the Assignment class for the a class's assignment
-	 * list. It takes the parameters given and updates the data members to hold
-	 * these values.
-	 * 
-	 * @param newName: The name of the assignment
-	 * 
-	 * @param newDescription: The description of the assignment
-	 * 
-	 * @param newType: What type of assignment it is (homework, quiz, test, etc.
-	 * user will select a type and then this will be translated into an integer by
-	 * upper layer.
-	 * 
-	 * @param possiblePoints: How many points the assignment is out of.
-	 */
-	public Assignment(String newName, String newDescription, 
-			int newType, int possiblePoints, String dueDate) {
-		f_name = newName;
-		f_description = newDescription;
-		f_type = newType;
-		f_possiblePoints = possiblePoints;
-		f_dueDate = dueDate;
+		f_description = "This is an assignment.";
+		f_type = 0;
+		f_possiblePoints = 100;
+		f_dueDate = "01/01/1970";
+		f_grade = 100;
 	}
 
 	/*

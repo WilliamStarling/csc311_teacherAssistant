@@ -35,10 +35,11 @@ public class Control {
 	}
 
 	public void createStudent() {
-
+		f_selectedClass.addStudent(f_selectedStudent);
 	}
 
 	public void createAssignment() {
+		
 
 	}
 
