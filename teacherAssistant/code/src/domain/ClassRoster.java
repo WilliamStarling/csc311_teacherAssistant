@@ -1,4 +1,4 @@
-package domain;
+Treepackage domain;
 import java.util.*;
 
 import foundation.Assignment;
