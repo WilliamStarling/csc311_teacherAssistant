@@ -14,7 +14,7 @@ public class Assignment {
 	/*
 	 * This method is the constructor for the assignment class. It only takes the name of the
 	 * assignment, as this is the only value initially asked for, and the others can be updated
-	 * immedietly after creation of the object.
+	 * immediately after creation of the object.
 	 * 
 	 * @param newName: The name of the assignment
 	 */

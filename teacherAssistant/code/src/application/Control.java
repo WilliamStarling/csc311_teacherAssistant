@@ -25,22 +25,34 @@ public class Control {
 	public void createAccount() {
 
 	}
-
-	public void createClass() {
-
+	
+	public void createClass(String name) {
+		f_selectedClass = new ClassRoster(name);
 	}
 
 	public void createChart() {
 
 	}
-
-	public void createStudent() {
-		f_selectedClass.addStudent(f_selectedStudent);
+	
+	/*
+	 * This creates a new student for the current class and adds it to the class's student list,
+	 * and then sets the current student to be this newly created student.
+	 * 
+	 * @param name: the name of the new student being added.
+	 */
+	public void createStudent(String name) {
+		f_selectedStudent = f_selectedClass.addStudent(name);
 	}
 
-	public void createAssignment() {
-		
-
+	/*
+	 * This creates a new assignment and adds them the current classes assignment list,
+	 * and then sets the current assignment to be this new one so it can be quickly 
+	 * updated with info.
+	 * 
+	 * @param name: the name of the new student being added.
+	 */
+	public void createAssignment(String name) {
+		f_selectedAssignment = f_selectedClass.addAssignment(name);
 	}
 
 	public void viewClasses() {

@@ -1,4 +1,4 @@
-Treepackage domain;
+package domain;
 import java.util.*;
 
 import foundation.Assignment;
@@ -7,7 +7,7 @@ import foundation.Student;
 public class ClassRoster {
 
 	private String f_subjectName;
-	private LinkedList f_chartList;
+	//private LinkedList f_chartList;
 	private TreeMap<String, Student> f_studentList;
 	private TreeMap<String, Assignment> f_assignmentList;
 
@@ -25,21 +25,31 @@ public class ClassRoster {
 	}
 
 	/*
-	 * This adds a new assignment to the list.
+	 * This adds a new assignment to the list and returns a pointer to it.
 	 * 
-	 * @param newAssignment: the assignment object that needs to be added to the list.
+	 * @param name: the name of the assignment to be added.
+	 * 
+	 * @return: returns a pointer to the assignment, so that Control can immedietly open it up
+	 * as the current assignment for editing.
 	 */
-	public void addAssignment(Assignment newAssignment) {
-		f_assignmentList.put(newAssignment.getName(), newAssignment);
+	public Assignment addAssignment(String name) {
+		Assignment newAssignment = new Assignment(name);
+		f_assignmentList.put(name, newAssignment);
+		return newAssignment;
 	}
 
 	/*
-	 * This creates a new student and adds them the student list.
+	 * This creates a new student and adds them the student list, and returns a pointer to it.
 	 * 
-	 * @param name: the name of the new object being added.
+	 * @param name: the name of the new student being added.
+	 * 
+	 * @return: Returns a pointer to the new student object, so that Control can set it as the 
+	 * current student and immediately open up it's info for editing.
 	 */
-	public void addStudent(String name) {
-		f_studentList.put(name, new Student(name));
+	public Student addStudent(String name) {
+		Student newStudent = new Student(name);
+		f_studentList.put(name, newStudent);
+		return newStudent;
 	}
 	
 	/*

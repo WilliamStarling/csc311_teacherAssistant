@@ -1,6 +1,6 @@
 package foundation;
 
-import java.util.LinkedList;
+import java.util.*;
 
 public class Student {
 
@@ -12,7 +12,7 @@ public class Student {
 
 	private String f_notes;
 
-	private LinkedList f_gradeList = new LinkedList();
+	private TreeMap f_gradeList = new TreeMap();
 
 	/*
 	 * The constructor. Only takes the name of the student for simplicities sake.
