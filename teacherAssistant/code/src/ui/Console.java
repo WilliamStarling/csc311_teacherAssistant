@@ -1,6 +1,14 @@
 package ui;
 public class Console {
-
+	
+	public void displayMainMenu()
+	{
+		System.out.println("1. View");
+		System.out.println("2. Create");
+		System.out.println("3. Edit");
+		System.out.println("4. Delete");
+	}
+	
 	public void displayLogin() {
 
 	}

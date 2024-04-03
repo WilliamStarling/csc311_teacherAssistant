@@ -1,5 +1,6 @@
 package application;
 
+import ui.Console;
 import domain.ClassRoster;
 import domain.SeatingChart;
 import domain.Teacher;
@@ -18,10 +19,17 @@ public class Control {
 
 	private SeatingChart f_selectedChart;
 
-	public void runConsole() {
-
+	/*
+	 *This is the main loop. When you start up the software it runs first.
+	 *It opens up the UI to run to start taking user input.
+	 * 
+	 * @param args:
+	 */
+	public static void main(String[] args) {
+		Console newSession = new Console();
+		newSession.displayMainMenu();
 	}
-
+	
 	public void createAccount() {
 
 	}
