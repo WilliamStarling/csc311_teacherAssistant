@@ -27,7 +27,7 @@ public class Control {
 	 */
 	public static void main(String[] args) {
 		Console newSession = new Console();
-		newSession.displayMainMenu();
+		newSession.startConsole();
 	}
 	
 	public void createAccount() {
