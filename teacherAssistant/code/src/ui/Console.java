@@ -17,6 +17,8 @@ public class Console {
 		
 		int selection2 = secondaryChoice();
 		
+		char repeatChoice;
+		
 		System.out.print("You wish to ");
 		
 		
@@ -50,6 +52,15 @@ public class Console {
 				System.out.print("student.");
 				break;
 		}
+		
+		System.out.println();
+		System.out.println("Is this correct? Type 'Y' to move on and 'N' to choose again. Y/N:");
+		repeatChoice = reader.next().charAt(0);
+		if(repeatChoice == 'N')
+		{
+			MainMenu();
+		}
+		
 	}
 	
 	public int primaryChoice()
