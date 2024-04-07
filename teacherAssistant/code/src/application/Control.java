@@ -19,16 +19,6 @@ public class Control {
 
 	private SeatingChart f_selectedChart;
 
-	/*
-	 *This is the main loop. When you start up the software it runs first.
-	 *It opens up the UI to run to start taking user input.
-	 * 
-	 * @param args:
-	 */
-	public static void main(String[] args) {
-		Console newSession = new Console();
-		newSession.startConsole();
-	}
 	
 	public void createAccount() {
 
@@ -63,8 +53,9 @@ public class Control {
 		f_selectedAssignment = f_selectedClass.addAssignment(name);
 	}
 
-	public void viewClasses() {
-
+	public String viewClasses() {
+		f_selectedClass.getClass
+		return "no";
 	}
 
 	public void viewStudentList() {
