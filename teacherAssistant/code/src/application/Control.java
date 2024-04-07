@@ -1,5 +1,6 @@
 package application;
 
+import ui.Console;
 import domain.ClassRoster;
 import domain.SeatingChart;
 import domain.Teacher;
@@ -18,10 +19,7 @@ public class Control {
 
 	private SeatingChart f_selectedChart;
 
-	public void runConsole() {
-
-	}
-
+	
 	public void createAccount() {
 
 	}
@@ -55,8 +53,9 @@ public class Control {
 		f_selectedAssignment = f_selectedClass.addAssignment(name);
 	}
 
-	public void viewClasses() {
-
+	public String viewClasses() {
+		f_selectedClass.getClass
+		return "no";
 	}
 
 	public void viewStudentList() {
