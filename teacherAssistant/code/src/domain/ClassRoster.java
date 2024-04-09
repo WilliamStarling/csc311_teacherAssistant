@@ -75,5 +75,27 @@ public class ClassRoster {
 	public Student getStudent(String studentName) {
 		return f_studentList.get(studentName);
 	}
+	
+	/*
+	 * This returns the TreeMap object containing the list of all students, for display
+	 * purposes.
+	 * 
+	 * @return: The TreeMap containing the students in this class. 
+	 */
+	public TreeMap getStudentList()
+	{
+		return f_studentList;
+	}
+	
+	/*
+	 * This returns the TreeMap object containing the list of all assignments, for display
+	 * purposes.
+	 * 
+	 * @return: The TreeMap containing the assignments in this class. 
+	 */
+	public TreeMap getAssignmentList()
+	{
+		return f_assignmentList;
+	}
 
 }
