@@ -20,37 +20,40 @@ public class Console {
 	
 	public static void MainMenu()
 	{
-		int selection1 = primaryChoice();
-		int selection2 = secondaryChoice();
-		boolean validChoice = true;
+		int selection1;
+		int selection2;
+		boolean repeatSelection = true;
 		char repeatChoice;
 		String objectName;
 		
-		System.out.print("You wish to ");
-		
-		
-		switch(selection1)
+		while(repeatSelection)
 		{
-			case 1:
-				System.out.print("create ");
-				break;
-			case 2:
-				System.out.print("edit ");
-				break;
-			case 3:
-				System.out.print("view ");
-				break;
-			case 4:
-				System.out.print("delete ");
-				break;
-			default:
-				System.out.println("I'm sorry, it appears you entered an option that's not available. Please try again.");;
-				validChoice = false;
-				MainMenu();
-		}
 		
-		if(validChoice)
-		{
+			selection1 = primaryChoice();
+			selection2 = secondaryChoice();
+			
+			System.out.print("You wish to ");
+			
+			
+			switch(selection1)
+			{
+				case 1:
+					System.out.print("create ");
+					break;
+				case 2:
+					System.out.print("edit ");
+					break;
+				case 3:
+					System.out.print("view ");
+					break;
+				case 4:
+					System.out.print("delete ");
+					break;
+				default:
+					System.out.println("I'm sorry, it appears you entered an option that's not available. Please try again.");
+					continue;
+			}
+			
 			System.out.print("a ");
 			
 			switch(selection2)
@@ -66,22 +69,30 @@ public class Console {
 					break;
 				default:
 					System.out.println("I'm sorry, it appears you entered an option that's not available. Please try again.");
-					MainMenu();
+					continue;
 			}
-			
+		
 			System.out.println();
 			System.out.println("Is this correct? Type 'Y' to move on and 'N' to choose again. Y/N:");
 			repeatChoice = reader.next().charAt(0);
 			if(repeatChoice == 'N')
 			{
-				MainMenu();
+				continue;
+			}
+			
+			System.out.println("Please enter the name:");
+			objectName = reader.nextLine();
+			
+			optionSelected(selection1, selection2, objectName);
+			
+			System.out.println();
+			System.out.println("Would you like to perform another action? Y/N:");
+			repeatChoice = reader.next().charAt(0);
+			if(repeatChoice == 'N')
+			{
+				repeatSelection = false;
 			}
 		}
-		
-		System.out.println("Please enter the name:");
-		objectName = reader.nextLine();
-		
-		optionSelected(selection1, selection2, objectName);
 	}
 	
 	public static int primaryChoice()
@@ -144,13 +155,18 @@ public class Console {
 				switch(choice2)
 				{
 					case 1:
-						//Code for viewing a class
+						System.out.println();
+						System.out.println(newSession.viewStudentList());
+						System.out.println();
+						System.out.println(newSession.viewAssignmentList());
 						break;
 					case 2:
-						//code for viewing an assignment
+						System.out.println();
+						System.out.println(newSession.viewAssignment());
 						break;
 					case 3:
-						//code for viewing a student
+						System.out.println();
+						System.out.println(newSession.viewStudent());
 						break;
 				}
 				break;

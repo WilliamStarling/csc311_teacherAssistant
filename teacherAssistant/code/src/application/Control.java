@@ -49,29 +49,41 @@ public class Control {
 	 * 
 	 * @param name: the name of the new student being added.
 	 */
-	public void createAssignment(String name) {
+	public void createAssignment(String name) 
+	{
 		f_selectedAssignment = f_selectedClass.addAssignment(name);
 	}
 
-	public String viewClasses() {
-		f_selectedClass.getClass
+	public String viewClasses() 
+	{
 		return "no";
 	}
 
-	public void viewStudentList() {
-
+	public String viewStudentList() 
+	{
+		return "The students for current class: \n" + f_selectedClass.getStudentList().keySet();
 	}
 
-	public void viewStudent() {
-
+	public String viewStudent() 
+	{
+		String studentInfo;
+		studentInfo = f_selectedStudent.getName() + "\n" + f_selectedStudent.getGrade() + "\n" + f_selectedStudent.getAbsenses()
+			+ "\n" + f_selectedStudent.getNotes();
+		return studentInfo;
 	}
 
-	public void viewAssignmentList() {
-
+	public String viewAssignmentList() 
+	{
+		return "The assignments for current class: \n" + f_selectedClass.getAssignmentList().keySet();
 	}
 
-	public void viewAssignment() {
-
+	public String viewAssignment() 
+	{
+		String assignmentInfo;
+		assignmentInfo = f_selectedAssignment.getName() + "\n" + f_selectedAssignment.getType() + "\n"
+				+ f_selectedAssignment.getDueDate() + "\n" + f_selectedAssignment.getPossiblePoints()
+				+ f_selectedAssignment.getDescription();
+		return assignmentInfo;
 	}
 
 }
