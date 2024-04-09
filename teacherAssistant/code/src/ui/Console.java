@@ -50,7 +50,9 @@ public class Console {
 					System.out.print("delete ");
 					break;
 				default:
+					System.out.println();
 					System.out.println("I'm sorry, it appears you entered an option that's not available. Please try again.");
+					System.out.println();
 					continue;
 			}
 			
@@ -68,18 +70,20 @@ public class Console {
 					System.out.print("student.");
 					break;
 				default:
+					System.out.println();
 					System.out.println("I'm sorry, it appears you entered an option that's not available. Please try again.");
+					System.out.println();
 					continue;
 			}
 		
 			System.out.println();
 			System.out.println("Is this correct? Type 'Y' to move on and 'N' to choose again. Y/N:");
 			repeatChoice = reader.next().charAt(0);
-			if(repeatChoice == 'N')
+			if(repeatChoice == 'N' || repeatChoice == 'n')
 			{
 				continue;
 			}
-			
+			objectName = reader.nextLine();
 			System.out.println("Please enter the name:");
 			objectName = reader.nextLine();
 			
@@ -88,7 +92,7 @@ public class Console {
 			System.out.println();
 			System.out.println("Would you like to perform another action? Y/N:");
 			repeatChoice = reader.next().charAt(0);
-			if(repeatChoice == 'N')
+			if(repeatChoice == 'N' || repeatChoice == 'n')
 			{
 				repeatSelection = false;
 			}
@@ -99,9 +103,9 @@ public class Console {
 	{
 		int userSelection;
 		System.out.println("Please enter the corresponding number for your selection.");
-		System.out.println("1. View");
-		System.out.println("2. Create");
-		System.out.println("3. Edit");
+		System.out.println("1. Create");
+		System.out.println("2. Edit");
+		System.out.println("3. View");
 		System.out.println("4. Delete");
 		userSelection = reader.nextInt();
 		return userSelection;
@@ -133,7 +137,7 @@ public class Console {
 						newSession.createAssignment(name);
 						break;
 					case 3:
-						newSession.createAssignment(name);
+						newSession.createStudent(name);
 						break;
 				}
 				break;
