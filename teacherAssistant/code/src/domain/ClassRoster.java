@@ -77,6 +77,26 @@ public class ClassRoster {
 	}
 	
 	/*
+	 * This removes the specified student from the list.
+	 * 
+	 * @param studentName: the name of the student to be deleted.
+	 */
+	public void deleteStudent(String studentName)
+	{
+		f_studentList.remove(studentName);
+	}
+	
+	/*
+	 * This deletes the specified assignment from the assignment list
+	 * 
+	 * @param studentName: the name of the assignment to be deleted.
+	 */
+	public void deleteAssignment(String assignmentName)
+	{
+		f_assignmentList.remove(assignmentName);
+	}
+	
+	/*
 	 * This returns the TreeMap object containing the list of all students, for display
 	 * purposes.
 	 * 
@@ -97,5 +117,4 @@ public class ClassRoster {
 	{
 		return f_assignmentList;
 	}
-
 }
