@@ -109,7 +109,33 @@ public class Control {
 		f_selectedStudent.setAbsences(absenses);
 	}
 	
-	//public void editAssignment 
+	/*
+	 * Edits the information on the current assignment by deleting the old assignment object
+	 * and creating a new one in case the name changes, and then sets the information for
+	 * the new assignment object.
+	 * 
+	 * @param oldName: The old name of the assignment being edited.
+	 * 
+	 * @param newName: The new name of the assignment.
+	 * 
+	 * @param description: The new description of the object.
+	 * 
+	 * @param type: The new type (homework, quiz, test, final) of the assignment.
+	 * 
+	 * @param maxPoints: The new maximum number of points that can be earned.
+	 * 
+	 * @param dueDate: The new due date for the assignment.
+	 */
+	public void editAssignment(String oldName, String newName, String description, String type,
+			int maxPoints, String dueDate)
+	{
+		deleteAssignment(oldName);
+		f_selectedAssignment = f_selectedClass.addAssignment(newName);
+		f_selectedAssignment.setDescription(description);
+		f_selectedAssignment.setType(type);
+		f_selectedAssignment.setPossiblePoints(maxPoints);
+		f_selectedAssignment.setDueDate(dueDate);
+	}
 
 	/*
 	 * Uses the deleteStudent function in the ClassRoster class to delete a student with the specified name.
