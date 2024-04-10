@@ -6,7 +6,7 @@ public class Assignment {
 	// Assignment attributes
 	private String f_name = "new assignment";
 	private String f_description = "This is an assignment.";
-	private int f_type = 0; // 0 is homework, * 1 is quiz, 2 is test/exam, and 3 is final.
+	private String f_type = "Homework";
 	private int f_possiblePoints = 100;
 	private float f_grade = 100;
 	private String f_dueDate = "01/01/1970";
@@ -48,10 +48,11 @@ public class Assignment {
 
 	/*
 	 * This is the setter method for the f_type data member in the class.
+	 * 0 is homework, 1 is quiz, 2 is test/exam, and 3 is final.
 	 * 
 	 * @param newType: the new type that you want to update f_type to have.
 	 */
-	public void setType(int newType) {
+	public void setType(String newType) {
 		f_type = newType;
 	}
 

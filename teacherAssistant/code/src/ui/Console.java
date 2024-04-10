@@ -154,7 +154,7 @@ public class Console {
 						//code for editing a class
 						break;
 					case 2:
-						//Code for editing an assignment
+						editAssignmemt(name);
 						break;
 					case 3:
 						//code for editing an student.
@@ -196,6 +196,55 @@ public class Console {
 				break;
 		}
 		
+	}
+	
+	/*
+	 * Prompts the user for the new information for the student specified, and then edits
+	 * the information using the editStudent function from the Console class.
+	 * 
+	 * @param oldName: Specifies which student we want to edit.
+	 */
+	private static void editStudent(String oldName)
+	{
+		String newName;
+		String notes;
+		int absences;
+		
+		System.out.println("Please enter the new name, your notes, and the number of absences"
+				+ "for this student, pressing \"enter\" after each entry");
+		
+		newName = reader.nextLine();
+		notes = reader.nextLine();
+		absences = reader.nextInt();
+		
+		newSession.editStudent(oldName, newName, notes, absences);
+	}
+	
+	/*
+	 * Prompts the user for the new information for the assignment specified, and then edits
+	 * the information using the editAssignment function from the Console class.
+	 * 
+	 * @param oldName: Specifies which assignment we want to edit.
+	 */
+	private static void editAssignmemt(String oldName)
+	{
+		String newName;
+		String description;
+		String type;
+		int maxPoints;
+		String dueDate;
+		
+		System.out.println("Please enter the new name, the description, the type of assignment,"
+				+ "the maximum points possible, and then the due date, pressing \"enter\" after each entry");
+		
+		newName = reader.nextLine();
+		description = reader.nextLine();
+		type = reader.nextLine();
+		maxPoints = reader.nextInt();
+		dueDate = reader.nextLine(); //First nextLine clears the new line character left from the nextInt.
+		dueDate = reader.nextLine();
+		
+		newSession.editAssignment(oldName, newName, description, type, maxPoints, dueDate);
 	}
 	
 	public static void displayLogin() {
