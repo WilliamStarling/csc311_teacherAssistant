@@ -15,7 +15,13 @@ public class Console {
 	 * @param args:
 	 */
 	public static void main(String[] args) {
+		SubjectSelect();
 		MainMenu();
+	}
+	
+	private static void SubjectSelect ()
+	{
+		System.out.println("Please type which of the following subjects you'd like to use:");
 	}
 	
 	public static void MainMenu()
@@ -166,11 +172,11 @@ public class Console {
 						break;
 					case 2:
 						System.out.println();
-						System.out.println(newSession.viewAssignment());
+						System.out.println(newSession.viewAssignment(name));
 						break;
 					case 3:
 						System.out.println();
-						System.out.println(newSession.viewStudent());
+						System.out.println(newSession.viewStudent(name));
 						break;
 				}
 				break;
@@ -178,13 +184,13 @@ public class Console {
 				switch(choice2)
 				{
 					case 1:
-						//code for deleting a class.
+						newSession.deleteClass(name);
 						break;
 					case 2:
-						//code for deleting an assignment
+						newSession.deleteAssignment(name);
 						break;
 					case 3:
-						//code for deleting a student
+						newSession.deleteStudent(name);
 						break;
 				}
 				break;

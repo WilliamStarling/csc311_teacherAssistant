@@ -9,7 +9,7 @@ import foundation.Student;
 
 public class Control {
 
-	private Teacher f_selectedTeacher;
+	private Teacher f_selectedTeacher = new Teacher();
 
 	private ClassRoster f_selectedClass;
 
@@ -21,11 +21,11 @@ public class Control {
 
 	
 	public void createAccount() {
-
+		
 	}
 	
 	public void createClass(String name) {
-		f_selectedClass = new ClassRoster(name);
+		f_selectedClass = f_selectedTeacher.addClass(name);
 	}
 
 	public void createChart() {
@@ -59,13 +59,14 @@ public class Control {
 		return "no";
 	}
 
-	public String viewStudentList() 
+	public String viewStudentList()
 	{
 		return "The students for current class: \n" + f_selectedClass.getStudentList().keySet();
 	}
 
-	public String viewStudent() 
+	public String viewStudent(String name) 
 	{
+		f_selectedStudent = f_selectedClass.getStudent(name);
 		String studentInfo;
 		studentInfo = f_selectedStudent.getName() + "\n" + f_selectedStudent.getGrade() + "\n" + f_selectedStudent.getAbsenses()
 			+ "\n" + f_selectedStudent.getNotes();
@@ -74,16 +75,71 @@ public class Control {
 
 	public String viewAssignmentList() 
 	{
+
 		return "The assignments for current class: \n" + f_selectedClass.getAssignmentList().keySet();
 	}
 
-	public String viewAssignment() 
+	public String viewAssignment(String name) 
 	{
+		f_selectedAssignment = f_selectedClass.getAssignment(name);
 		String assignmentInfo;
 		assignmentInfo = f_selectedAssignment.getName() + "\n" + f_selectedAssignment.getType() + "\n"
 				+ f_selectedAssignment.getDueDate() + "\n" + f_selectedAssignment.getPossiblePoints()
 				+ f_selectedAssignment.getDescription();
 		return assignmentInfo;
+	}
+	
+	/*
+	 * Edits the information on the current student by deleting the old student object and creating a new
+	 * one in the case that the name changes and then sets the information for the new student object.
+	 *
+	 *@param oldName: The original name of the student whose information your editing.
+	 *
+	 *@param newName: The new name of the student whose information your editing.
+	 *
+	 *@param notes: The notes that you wish to be saved for the student.
+	 *
+	 *@param absenses: the number of absences you wish for this student to have.
+	 */
+	public void editStudent(String oldName, String newName, String notes, int absenses)
+	{
+		deleteStudent(oldName);
+		f_selectedStudent = f_selectedClass.addStudent(newName);
+		f_selectedStudent.setNotes(notes);
+		f_selectedStudent.setAbsences(absenses);
+	}
+	
+	//public void editAssignment 
+
+	/*
+	 * Uses the deleteStudent function in the ClassRoster class to delete a student with the specified name.
+	 * 
+	 * @param name: the name of the student that you're deleting.
+	 */
+	public void deleteStudent(String name)
+	{
+		f_selectedClass.deleteStudent(name);
+	}
+	
+	/*
+	 * Uses the delete assignment function in the ClassRoster class to delete an assignment.
+	 * 
+	 * @param name: The name of the assignment that you're deleting.
+	 */
+	public void deleteAssignment(String name)
+	{
+		f_selectedClass.deleteAssignment(name);
+	}
+	
+	
+	/*
+	 * Deletes the specified class from the current teacher's class list.
+	 * 
+	 * @Param name: The name of the class to be deleted.
+	 */
+	public void deleteClass(String name)
+	{
+		f_selectedTeacher.deleteClass(name);
 	}
 
 }
