@@ -1,18 +1,24 @@
 package foundation;
 
-import java.util.*;
+import java.util.LinkedList;
 
 public class Student {
 
 	private String f_name;
-
+	
+	private float f_totalPosPoints;
+	
+	private float f_totalPoints;
+	
 	private float f_overallGrade;
 
 	private int f_absences;
 
 	private String f_notes;
 
-	private TreeMap f_gradeList = new TreeMap();
+	//f_gradeList is assignment list
+	private LinkedList f_gradeList = new LinkedList();
+	
 
 	/*
 	 * The constructor. Only takes the name of the student for simplicities sake.
@@ -21,6 +27,9 @@ public class Student {
 	public Student(String name) {
 		f_name = name;
 		f_absences = 0;
+		f_overallGrade = 0;
+		f_totalPoints = 0; 
+		f_totalPosPoints = 0;
 		f_notes = "Typical student.";
 		f_overallGrade = 100;
 	}
@@ -34,11 +43,14 @@ public class Student {
 		f_name = newName;
 	}
 
-	public void addGrade(int points) {
-		
+	public void addGrade(float points, float totalPos) {
+		this.f_totalPosPoints += totalPos;
+		this.f_totalPoints += points;
+		this.f_overallGrade = (f_totalPoints / totalPosPoints) * 100;
 	}
 
 	public void setGrade(int whichGrade, int points) {
+		
 	}
 
 	/*
@@ -67,7 +79,7 @@ public class Student {
 	 */
 	public String getName()
 	{
-		return f_name;
+		return this.f_name;
 	}
 
 	/*
@@ -75,7 +87,8 @@ public class Student {
 	 * 
 	 * @return: returns the grade of the student.
 	 */
-	public float getGrade() {
+	public float getGrade() 
+  {
 		return f_overallGrade;
 	}
 
@@ -85,7 +98,7 @@ public class Student {
 	 * @return: returns the number of absences that the student has. 
 	 */
 	public int getAbsenses() {
-		return f_absences;
+		return this.f_absences;
 	}
 
 	/*
@@ -94,11 +107,12 @@ public class Student {
 	 * @return: returns the notes this student has.
 	 */
 	public String getNotes() {
-		return f_notes;
+		return this.f_notes;
 	}
 
 	public void getGrades() {
-
+		return this.f_gradeList.getGrade(); //Place-holder
+		//plan to loop through all graded assignments
 	}
 
 }
