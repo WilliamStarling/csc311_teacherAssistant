@@ -9,7 +9,7 @@ public class Teacher {
 
 	private String f_password;
 
-	private TreeMap<String, ClassRoster> f_classList;
+	private TreeMap<String, ClassRoster> f_classList = new TreeMap();
 
 	private ClassRoster classRoster;
 
@@ -18,11 +18,11 @@ public class Teacher {
 
 	}
 
-	public ClassRoster addClass(String subjectName) 
+	public ClassRoster addClass(String className) 
 	{
-		ClassRoster newSubject = new ClassRoster(subjectName);
-		f_classList.put(subjectName, newSubject);
-		return newSubject;
+		ClassRoster newClass = new ClassRoster(className);
+		f_classList.put(className, newClass);
+		return newClass;
 	}
 	
 	public ClassRoster getClass(String className)

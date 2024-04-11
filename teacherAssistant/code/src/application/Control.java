@@ -24,8 +24,13 @@ public class Control {
 		
 	}
 	
-	public void createClass(String name) {
-		f_selectedClass = f_selectedTeacher.addClass(name);
+	/*
+	 * Creates a new class for the teacher currently logged in.
+	 * 
+	 * @param className: the name of the class that the user is making.
+	 */
+	public void createClass(String className) {
+		f_selectedClass = f_selectedTeacher.addClass(className);
 	}
 
 	public void createChart() {
@@ -59,29 +64,56 @@ public class Control {
 		return "no";
 	}
 
+	/*
+	 * Displays the different students that have been made for the current class.
+	 * 
+	 * @return: Returns a string containing the set of students and their names.
+	 */
 	public String viewStudentList()
 	{
 		return "The students for current class: \n" + f_selectedClass.getStudentList().keySet();
 	}
 
-	public String viewStudent(String name) 
+	/*
+	 * Gathers all the information pertaining to the specified student, and puts it together
+	 * into a string to display.
+	 * 
+	 * @param studentName: The name of the student whose information you're gathering.
+	 * 
+	 * @return: Returns the string containing all the information for the specified student.
+	 */
+	public String viewStudent(String studentName) 
 	{
-		f_selectedStudent = f_selectedClass.getStudent(name);
+		f_selectedStudent = f_selectedClass.getStudent(studentName);
 		String studentInfo;
 		studentInfo = f_selectedStudent.getName() + "\n" + f_selectedStudent.getGrade() + "\n" + f_selectedStudent.getAbsenses()
 			+ "\n" + f_selectedStudent.getNotes();
 		return studentInfo;
 	}
 
+	/*
+	 * Displays the different assignments that have been made for the current class.
+	 * 
+	 * @return: Returns a string containing the set of assignments and their names.
+	 */
 	public String viewAssignmentList() 
 	{
 
 		return "The assignments for current class: \n" + f_selectedClass.getAssignmentList().keySet();
 	}
 
-	public String viewAssignment(String name) 
+	
+	/*
+	 * This gathers all the information pertaining to the specified assignment, and puts
+	 * it together into a single string.
+	 * 
+	 * @param assignmentName: The name of the assignment that your getting the info for.
+	 * 
+	 * @return: The string to be displayed.
+	 */
+	public String viewAssignment(String assignmentName) 
 	{
-		f_selectedAssignment = f_selectedClass.getAssignment(name);
+		f_selectedAssignment = f_selectedClass.getAssignment(assignmentName);
 		String assignmentInfo;
 		assignmentInfo = f_selectedAssignment.getName() + "\n" + f_selectedAssignment.getType() + "\n"
 				+ f_selectedAssignment.getDueDate() + "\n" + f_selectedAssignment.getPossiblePoints()

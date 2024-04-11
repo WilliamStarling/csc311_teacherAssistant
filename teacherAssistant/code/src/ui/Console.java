@@ -15,15 +15,13 @@ public class Console {
 	 * @param args:
 	 */
 	public static void main(String[] args) {
-		SubjectSelect();
 		MainMenu();
 	}
 	
-	private static void SubjectSelect ()
-	{
-		System.out.println("Please type which of the following subjects you'd like to use:");
-	}
-	
+	/*
+	 * This is the main menu that's called, which handles calling different functions to show options,
+	 * take in input, and also perform the actions.
+	 */
 	public static void MainMenu()
 	{
 		int selection1;
@@ -105,6 +103,12 @@ public class Console {
 		}
 	}
 	
+	
+	/*
+	 * This handles outputting the different actions that can be taken and returning what's selected.
+	 * 
+	 * @return: Returns the option that the user selected.
+	 */
 	public static int primaryChoice()
 	{
 		int userSelection;
@@ -117,6 +121,11 @@ public class Console {
 		return userSelection;
 	}
 
+	/*
+	 * This handles outputting the different items the user can perform actions on, and takes in input.
+	 * 
+	 * @return: Returns the choice the user made.
+	 */
 	public static int secondaryChoice()
 	{
 		int userSelection;
@@ -129,6 +138,16 @@ public class Console {
 		return userSelection;
 	}
 	
+	/*
+	 * This takes the input the user provided and decides what should be done based on them.
+	 * 
+	 * @param choice1: This is the input the user provided for what action they wanted to take.
+	 * 
+	 * @param choice2: This is the input the user provided for what object they'd like to perform
+	 * the action on.
+	 * 
+	 * @param name: this is the name of the object that they wish to perform the action on.
+	 */
 	private static void optionSelected(int choice1, int choice2, String name)
 	{
 		switch(choice1)
@@ -157,7 +176,7 @@ public class Console {
 						editAssignmemt(name);
 						break;
 					case 3:
-						//code for editing an student.
+						editStudent(name);
 						break;
 				}
 				break;
@@ -249,14 +268,6 @@ public class Console {
 	
 	public static void displayLogin() {
 
-	}
-
-	public static void displayOption() {
-
-	}
-
-	public static int selectOption() {
-		return 0;
 	}
 
 	public static boolean signIn(String username, String password) {
