@@ -13,6 +13,11 @@ public class Teacher {
 
 	private ClassRoster classRoster;
 
+	//Default Constructor
+	public Teacher() {
+		f_username = "Default Name";
+	}
+	
 	//Make these be the parameter: String newUsername, String newPassword
 	public Teacher(String newUsername) {
 		f_username = newUsername;
