@@ -7,15 +7,15 @@ public class Teacher {
 
 	public String f_username;
 
-	private String f_password;
+	//private String f_password;
 
 	private TreeMap<String, ClassRoster> f_classList;
 
 	private ClassRoster classRoster;
 
 	//Make these be the parameter: String newUsername, String newPassword
-	public Teacher() {
-
+	public Teacher(String newUsername) {
+		f_username = newUsername;
 	}
 
 	public ClassRoster addClass(String subjectName) 

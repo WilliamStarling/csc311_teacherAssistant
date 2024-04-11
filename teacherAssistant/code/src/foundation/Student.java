@@ -40,19 +40,28 @@ public class Student {
 	public void addGrade(float points, float totalPos) {
 		this.f_totalPosPoints += totalPos;
 		this.f_totalPoints += points;
-		this.f_overallGrade = (f_totalPoints / totalPosPoints) * 100;
+		this.f_overallGrade = (f_totalPoints / f_totalPosPoints) * 100;
 	}
 
 	public void setGrade(int whichGrade, int points) {
 		
 	}
 
+	public double getGrade() {
+		return 100.00; //Hard-coded for debugging purposes
+	}
+	
 	public void setNotes(String newNote) {
 		f_notes = newNote;
 	}
 
 	public void setAbsences(int numbAbsences) {
-		f_absences = numbAbsences;
+		if(numbAbsences < 0) {
+			throw new IllegalArgumentException("Absences cannot be a negative number.");
+		}
+		else {
+			f_absences = numbAbsences;	
+		}//end of if-else
 	}
 	
 	public String getName()
@@ -64,7 +73,7 @@ public class Student {
 		return this.f_overallGrade; 
 	}
 
-	public int getAbsenses() {
+	public int getAbsences() {
 		return this.f_absences;
 	}
 
@@ -72,8 +81,8 @@ public class Student {
 		return this.f_notes;
 	}
 
-	public void getGrades() {
-		return this.f_gradeList.getGrade(); //Place-holder
+	public void getAllGrades() {
+		//return this.f_gradeList.getGrade(); //Place-holder
 		//plan to loop through all graded assignments
 	}
 

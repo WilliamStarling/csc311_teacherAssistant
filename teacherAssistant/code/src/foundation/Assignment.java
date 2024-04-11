@@ -21,7 +21,7 @@ public class Assignment {
 	public Assignment(String newName) {
 		f_name = newName;
 		f_description = "This is an assignment.";
-		f_type = 0;
+		f_type = "TBD";
 		f_possiblePoints = 100;
 		f_dueDate = "01/01/1970";
 		f_grade = 100;
@@ -119,7 +119,7 @@ public class Assignment {
 	 * @return: returns an integer that corresponds to a specific type. 0 is
 	 * homework, 1 is quiz, 2 is test/exam, and 3 is final.
 	 */
-	public int getType() {
+	public String getType() {
 		return f_type;
 	}
 
