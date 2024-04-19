@@ -1,7 +1,10 @@
 package foundation;
 
+//Libraries
+import java.io.Serializable;
 
-public class Assignment {
+
+public class Assignment implements Serializable{
 
 	// Assignment attributes
 	private String f_name = "new assignment";
