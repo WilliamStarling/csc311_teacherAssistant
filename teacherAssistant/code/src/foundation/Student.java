@@ -1,8 +1,10 @@
 package foundation;
 
+//Libraries
 import java.util.LinkedList;
+import java.io.Serializable;
 
-public class Student {
+public class Student implements Serializable{
 
 	private String f_name;
 	
@@ -46,7 +48,7 @@ public class Student {
 	public void addGrade(float points, float totalPos) {
 		this.f_totalPosPoints += totalPos;
 		this.f_totalPoints += points;
-		this.f_overallGrade = (f_totalPoints / totalPosPoints) * 100;
+		this.f_overallGrade = (f_totalPoints / f_totalPosPoints) * 100;
 	}
 
 	public void setGrade(int whichGrade, int points) {
@@ -111,7 +113,7 @@ public class Student {
 	}
 
 	public void getGrades() {
-		return this.f_gradeList.getGrade(); //Place-holder
+		//return this.f_gradeList.getGrade(); //Place-holder
 		//plan to loop through all graded assignments
 	}
 
