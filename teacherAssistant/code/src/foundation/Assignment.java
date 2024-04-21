@@ -1,7 +1,10 @@
 package foundation;
 
+//Libraries
+import java.io.Serializable;
 
-public class Assignment {
+
+public class Assignment implements Serializable{
 
 	// Assignment attributes
 	private String f_name = "new assignment";
@@ -21,7 +24,7 @@ public class Assignment {
 	public Assignment(String newName) {
 		f_name = newName;
 		f_description = "This is an assignment.";
-		f_type = "TBD";
+		f_type = "Homework";
 		f_possiblePoints = 100;
 		f_dueDate = "01/01/1970";
 		f_grade = 100;
