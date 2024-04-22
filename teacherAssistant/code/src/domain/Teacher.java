@@ -1,18 +1,19 @@
 package domain;
-import java.util.*;
 
+
+//Libraries
+import java.util.*;
+import java.io.Serializable;
 import foundation.Assignment;
 
-public class Teacher {
+public class Teacher implements Serializable{
 
 	public String f_username;
-
-	//private String f_password;
-
+	private String f_password;
+	private String userID;
 	private TreeMap<String, ClassRoster> f_classList = new TreeMap();
-
 	private ClassRoster classRoster;
-
+	
 	/*
 	 * The constructor for the teacher class, sets the username and password.
 	 * 
@@ -25,9 +26,9 @@ public class Teacher {
 		f_password = password;
 	}
 
-	public ClassRoster addClass(String className) 
+	public ClassRoster addClass(String className, String id) 
 	{
-		ClassRoster newClass = new ClassRoster(className);
+		ClassRoster newClass = new ClassRoster(className, id);
 		f_classList.put(className, newClass);
 		return newClass;
 	}

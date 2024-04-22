@@ -1,20 +1,27 @@
 package application;
 //Libraries
-import java.util.TreeMap;
+import java.util.*;
 
+import domain.Teacher;
 import foundation.Student;
-
-import java.io.Serializable;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class Saving implements Serializable{
 	
-	public void saveStudentList(TreeMap<String, Student> list, String filename) throws IOException{
-		try (ObjectOutputStream serialize = new ObjectOutputStream(new FileOutputStream(filename))) {
-			serialize.writeObject(list);
-		}
+	public void saveUsers(LinkedList<Teacher> list, String filename) throws IOException, ClassNotFoundException{
+		FileOutputStream fileOutput = new FileOutputStream("saving/" + filename);
+		ObjectOutputStream objectOutput = new ObjectOutputStream (fileOutput);
+		objectOutput.writeObject(list);
+		objectOutput.flush();
+		objectOutput.close();
+	}
+	
+	public LinkedList loadUsers(String filename) throws IOException, ClassNotFoundException {
+		FileInputStream fileInput = new FileInputStream("saving/" + filename);
+		ObjectInputStream objectInput = new ObjectInputStream(fileInput);
+		LinkedList users = (LinkedList) objectInput.readObject();
+		objectInput.close();
+		return users;
 	}
 
 }

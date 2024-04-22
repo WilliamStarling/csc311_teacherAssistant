@@ -2,7 +2,7 @@ package application;
 
 //Libraries
 import ui.Console;
-import java.util.LinkedList;
+import java.util.*;
 import domain.ClassRoster;
 import domain.SeatingChart;
 import domain.Teacher;
@@ -12,15 +12,13 @@ import foundation.Student;
 public class Control {
 
 	private Teacher f_selectedTeacher;
-
 	private ClassRoster f_selectedClass;
-
 	private Student f_selectedStudent;
-
 	private Assignment f_selectedAssignment;
-
 	private SeatingChart f_selectedChart;
 	private LinkedList<Teacher> f_userList = new LinkedList<Teacher>();
+	Random rand = new Random(); //for generating random numbers
+	int lastID = 0000;
 
 	/*
 	 *  Allows the user to make an account.
@@ -83,7 +81,9 @@ public class Control {
 	 * @param className: the name of the class that the user is making.
 	 */
 	public void createClass(String className) {
-		f_selectedClass = f_selectedTeacher.addClass(className);
+		String newID = generateID('C', lastID);
+		f_selectedClass = f_selectedTeacher.addClass(className, newID);
+		lastID = Integer.valueOf(newID.substring(2));
 	}
 
 	public void createChart() {
@@ -261,4 +261,20 @@ public class Control {
 		f_selectedTeacher.deleteClass(name);
 	}
 
+	/*
+	 * generates a unique ID for identification that won't be changed.
+	 * 
+	 * @param typeLetter: the type of object, ID's for objects of the same type will all begin with the same letter.
+	 * 
+	 * @param previousID: the ID for the most recent object needs to be passed in to ensure that this objects ID is unique and an increase from the last one.
+	 * 
+	 * @return: returns the ID that was generated.
+	 */
+	public String generateID(char typeLetter, int previousID)
+	{
+		char randChar = (char) ('a' + rand.nextInt(26));
+		
+		return String.valueOf(typeLetter) + String.valueOf(randChar) + String.valueOf(previousID + 1);
+	}
+	
 }

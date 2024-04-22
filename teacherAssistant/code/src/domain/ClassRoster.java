@@ -1,15 +1,17 @@
 package domain;
 import java.util.*;
-
+import java.io.Serializable;
 import foundation.Assignment;
 import foundation.Student;
 
-public class ClassRoster {
+
+public class ClassRoster implements Serializable{
 
 	private String f_subjectName;
 	//private LinkedList f_chartList;
 	private TreeMap<String, Student> f_studentList;
 	private TreeMap<String, Assignment> f_assignmentList;
+	private String classID;
 
 	/*
 	 * This method is the constructor for the classRoster class for the student. 
@@ -18,10 +20,11 @@ public class ClassRoster {
 	 * 
 	 * @param courseName: The name of the course
 	 */
-	public ClassRoster(String courseName) {
+	public ClassRoster(String courseName, String id) {
 		f_subjectName = courseName;
 		f_assignmentList = new TreeMap();
 		f_studentList = new TreeMap();
+		classID = id;
 	}
 
 	/*
