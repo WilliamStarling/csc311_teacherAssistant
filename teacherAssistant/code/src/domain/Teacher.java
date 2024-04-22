@@ -7,7 +7,7 @@ public class Teacher {
 
 	public String f_username;
 
-	private String f_password;
+	//private String f_password;
 
 	private TreeMap<String, ClassRoster> f_classList = new TreeMap();
 

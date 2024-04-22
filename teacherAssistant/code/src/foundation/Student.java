@@ -71,7 +71,12 @@ public class Student implements Serializable{
 	 * @param newAbsences: the number of absences that you want the student to have.
 	 */
 	public void setAbsences(int numbAbsences) {
-		f_absences = numbAbsences;
+		if(numbAbsences < 0) {
+			throw new IllegalArgumentException("Absences cannot be a negative number.");
+		}
+		else {
+			f_absences = numbAbsences;	
+		}//end of if-else
 	}
 	
 	/*
