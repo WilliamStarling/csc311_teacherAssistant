@@ -152,12 +152,10 @@ public class Log_In_Frame implements ActionListener{
 			accountName = userNameTextBox.getText();
 			accountPass = passwordTextBox.getText();
 			
-			if(session.login(username, password))
-			{
+			if(session.login(accountName, accountPass)) {
 				new Home_Frame(accountName, accountPass);
 			}
-			else
-			{
+			else {
 				frame1.add(invalidLogin);
 				frame1.repaint();
 			}
