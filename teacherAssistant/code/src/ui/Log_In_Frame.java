@@ -110,7 +110,7 @@ public class Log_In_Frame implements ActionListener{
 		createAccountButton.setForeground(Color.BLUE);
 		
 		//Creates a label for if the login information wasn't correct. added to the frame when login fails.
-		invalidLogin.setBounds(375, 390, 700, 40);
+		invalidLogin.setBounds(375, 450, 700, 40);
 		invalidLogin.setText("Invalid login, please check username and password and try again.");
 		invalidLogin.setFont(new Font("Arial", Font.PLAIN, 20));
 		invalidLogin.setForeground(Color.RED);
@@ -148,12 +148,12 @@ public class Log_In_Frame implements ActionListener{
 		
 		
 		if((e.getSource() == logInButton) || (e.getSource() == userNameTextBox || e.getSource() == passwordTextBox)) {
-			frame1.dispose();
 			accountName = userNameTextBox.getText();
 			accountPass = passwordTextBox.getText();
 			
 			if(session.login(accountName, accountPass)) {
-				new Home_Frame(accountName, accountPass);
+				frame1.dispose();
+				new Home_Frame(session, accountName, accountPass);
 			}
 			else {
 				frame1.add(invalidLogin);
