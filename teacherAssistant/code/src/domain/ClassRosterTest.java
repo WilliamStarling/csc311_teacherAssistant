@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class ClassRosterTest {
 	
-	ClassRoster course = new ClassRoster("Example Class");
+	ClassRoster course = new ClassRoster("Example Class", "Ta0000");
 
 	@Test
 	void test() {

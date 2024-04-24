@@ -142,7 +142,7 @@ public class Control {
 		String studentInfo;
 		studentInfo = f_selectedStudent.getName() + "\n"
 				+ f_selectedStudent.getGrade() + "\n"
-				+ f_selectedStudent.getAbsenses() + "\n"
+				+ f_selectedStudent.getAbsences() + "\n"
 				+ f_selectedStudent.getNotes();
 		return studentInfo;
 	}
