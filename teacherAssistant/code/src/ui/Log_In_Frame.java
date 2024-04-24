@@ -26,6 +26,7 @@ public class Log_In_Frame implements ActionListener{
 	JTextField userNameTextBox = new JTextField();
 	JTextField passwordTextBox = new JTextField();
 	
+	JButton logInButton = new JButton("Log In");
 	JButton createAccountButton = new JButton("Create an account");
 	
 	Control session; //For storing the current control object that's being used.
@@ -85,12 +86,19 @@ public class Log_In_Frame implements ActionListener{
 		passwordTextBox.addActionListener(this);
 		
 		/*
+		 * Building the 'Log In' button
+		 * */
+		logInButton.setBounds(570, 400, 200, 40);
+		logInButton.addActionListener(this);
+		logInButton.setFocusable(false);
+		logInButton.setFont(new Font("Arial", Font.BOLD, 20));
+		
+		/*
 		 * Creating the account prompt Label under login 
 		 * */
 		accountPrompt.setBounds(568, 495, 260, 40);
 		accountPrompt.setText("Don't have an account yet?");
 		accountPrompt.setFont(new Font("Arial", Font.PLAIN, 18));
-		
 		
 		/*
 		 * Building the 'create an account' button
@@ -117,6 +125,7 @@ public class Log_In_Frame implements ActionListener{
 		frame1.add(accountPrompt);
 		frame1.add(userNameTextBox);
 		frame1.add(passwordTextBox);
+		frame1.add(logInButton);
 		frame1.add(createAccountButton);
 		
 		/*
@@ -126,26 +135,33 @@ public class Log_In_Frame implements ActionListener{
 		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame1.setResizable(false);
 		frame1.setLayout(null);
+		frame1.setLocationRelativeTo(null);
 		frame1.setVisible(true);
 		
 	}
-	
-	public void actionPerformed(ActionEvent e)
-	{
-		if(e.getSource() == userNameTextBox || e.getSource() == passwordTextBox)
-		{
-			String username = userNameTextBox.getText();
-			String password = passwordTextBox.getText();
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		String accountName;
+		String accountPass;
+		
+		
+		if((e.getSource() == logInButton) || (e.getSource() == userNameTextBox || e.getSource() == passwordTextBox)) {
+			frame1.dispose();
+			accountName = userNameTextBox.getText();
+			accountPass = passwordTextBox.getText();
 			
 			if(session.login(username, password))
 			{
-				System.out.println("login success!"); //FIX ME: replace with calling the class selection frame.
+				new Home_Frame(accountName, accountPass);
 			}
 			else
 			{
 				frame1.add(invalidLogin);
 				frame1.repaint();
 			}
+			
 		}
 	}
 }
