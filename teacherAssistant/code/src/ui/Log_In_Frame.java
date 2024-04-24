@@ -1,10 +1,13 @@
 package ui;
 
+import application.Control;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -18,13 +21,18 @@ public class Log_In_Frame implements ActionListener{
 	JLabel userNameLabel = new JLabel();
 	JLabel passwordLabel = new JLabel();
 	JLabel accountPrompt = new JLabel();
+	JLabel invalidLogin = new JLabel();
 	
 	JTextField userNameTextBox = new JTextField();
 	JTextField passwordTextBox = new JTextField();
 	
 	JButton createAccountButton = new JButton("Create an account");
 	
-	Log_In_Frame(){
+	Control session; //For storing the current control object that's being used.
+	
+	Log_In_Frame(Control currentSession){
+		
+		session = currentSession;
 		
 		/*
 		 * Getting screen width and height for frame size
@@ -59,6 +67,7 @@ public class Log_In_Frame implements ActionListener{
 		 * Creating the Username entry 
 		 * */
 		userNameTextBox.setBounds(550, 281, 250, 28);//250 pixels long 28 high
+		userNameTextBox.addActionListener(this);
 		
 		/*
 		 * Creating the Password Label above password entry 
@@ -73,6 +82,7 @@ public class Log_In_Frame implements ActionListener{
 		 * Creating the Password entry 
 		 * */
 		passwordTextBox.setBounds(550, 345, 250, 28);//250 pixels long 28 high
+		passwordTextBox.addActionListener(this);
 		
 		/*
 		 * Creating the account prompt Label under login 
@@ -91,7 +101,11 @@ public class Log_In_Frame implements ActionListener{
 		createAccountButton.setFont(new Font("Arial", Font.PLAIN, 20));
 		createAccountButton.setForeground(Color.BLUE);
 		
-		
+		//Creates a label for if the login information wasn't correct. added to the frame when login fails.
+		invalidLogin.setBounds(375, 390, 700, 40);
+		invalidLogin.setText("Invalid login, please check username and password and try again.");
+		invalidLogin.setFont(new Font("Arial", Font.PLAIN, 20));
+		invalidLogin.setForeground(Color.RED);
 		
 		
 		/*
@@ -115,11 +129,23 @@ public class Log_In_Frame implements ActionListener{
 		frame1.setVisible(true);
 		
 	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
+	
+	public void actionPerformed(ActionEvent e)
+	{
+		if(e.getSource() == userNameTextBox || e.getSource() == passwordTextBox)
+		{
+			String username = userNameTextBox.getText();
+			String password = passwordTextBox.getText();
+			
+			if(session.login(username, password))
+			{
+				System.out.println("login success!"); //FIX ME: replace with calling the class selection frame.
+			}
+			else
+			{
+				frame1.add(invalidLogin);
+				frame1.repaint();
+			}
+		}
 	}
-
 }

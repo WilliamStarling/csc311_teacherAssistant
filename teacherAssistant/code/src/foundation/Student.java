@@ -104,7 +104,7 @@ public class Student implements Serializable{
 	 * 
 	 * @return: returns the number of absences that the student has. 
 	 */
-	public int getAbsenses() {
+	public int getAbsences() {
 		return this.f_absences;
 	}
 
