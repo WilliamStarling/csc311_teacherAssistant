@@ -10,6 +10,8 @@ import java.awt.event.MouseListener;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import application.Control;
+
 public class Home_Frame implements ActionListener {
 	
 	public static String userName;
@@ -28,9 +30,13 @@ public class Home_Frame implements ActionListener {
 	JLabel underline2 = new JLabel();
 	JLabel underline3 = new JLabel();
 	JLabel underline4 = new JLabel();
+	
+	Control session;
 
 	
-	Home_Frame(String name, String pass){
+	Home_Frame(Control currentSession, String name, String pass){
+		session = currentSession;
+		
 		int screenWidth = 1366;
 		int screenHeight = 768;
 		
@@ -125,7 +131,7 @@ public class Home_Frame implements ActionListener {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				homeFrame.dispose();
-				new Log_In_Frame();
+				new Log_In_Frame(session);
 				
 			}
 
