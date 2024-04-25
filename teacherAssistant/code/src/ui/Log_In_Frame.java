@@ -24,17 +24,17 @@ public class Log_In_Frame implements ActionListener {
 
 	JFrame frame1 = new JFrame("Teacher Assistant");
 
-	JLabel TA_Label = new JLabel();
-	JLabel userNameLabel = new JLabel();
-	JLabel passwordLabel = new JLabel();
-	JLabel accountPrompt = new JLabel();
-	JLabel invalidLogin = new JLabel();
+	JLabel f_TA_Label = new JLabel();
+	JLabel f_userNameLabel = new JLabel();
+	JLabel f_passwordLabel = new JLabel();
+	JLabel f_accountPrompt = new JLabel();
+	JLabel f_invalidLogin = new JLabel();
 
-	JTextField userNameTextBox = new JTextField();
-	JTextField passwordTextBox = new JTextField();
+	JTextField f_userNameTextBox = new JTextField();
+	JTextField f_passwordTextBox = new JTextField();
 
-	JButton logInButton = new JButton("Log In");
-	JButton createAccountButton = new JButton("Create an account");
+	JButton f_logInButton = new JButton("Log In");
+	JButton f_createAccountButton = new JButton("Create an account");
 
 	private Control f_session; // For storing the current control object that's
 								// being used.
@@ -125,7 +125,7 @@ public class Log_In_Frame implements ActionListener {
 		//Creates a label for if the login information wasn't correct. added to 
 		//the frame when login fails.
 		f_invalidLogin.setBounds(387, 450, 700, 40);
-		invalidLogin.setText(
+		f_invalidLogin.setText(
 				"Invalid login, please check username and password and try again.");
 		f_invalidLogin.setFont(new Font("Arial", Font.PLAIN, 20));
 		f_invalidLogin.setForeground(Color.RED);
