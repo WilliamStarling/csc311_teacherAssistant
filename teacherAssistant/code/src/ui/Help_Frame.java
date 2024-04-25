@@ -28,6 +28,10 @@ public class Help_Frame implements ActionListener{
 	JLabel underline2 = new JLabel();
 	JLabel underline3 = new JLabel();
 	JLabel underline4 = new JLabel();
+	JLabel usingTALabel = new JLabel();
+	JLabel editAccount1 = new JLabel();
+	JLabel editAccount2 = new JLabel();
+	JLabel exitInstructions = new JLabel();
 	
 	LinePanel vertLine = new LinePanel();
 	
@@ -121,7 +125,35 @@ public class Help_Frame implements ActionListener{
 		underline4.setText("______");
 		underline4.setFont(new Font("Arial", Font.PLAIN, 23));
 		underline4.setForeground(Color.BLUE);
-			
+		
+		/*
+		 * Creating the using teacher assistant section Label
+		 * */
+		usingTALabel.setBounds(190, 115, 300, 80);
+		usingTALabel.setText("Using Teacher Assistant:");
+		usingTALabel.setFont(new Font("Arial", Font.BOLD, 19));
+		
+		/*
+		 * Creating the edit account instruction Label
+		 * */
+		editAccount1.setBounds(210, 150, 1000, 80);
+		editAccount1.setText("- Edit account information: To edit your account information such as your username or password"
+				+ " click on the word 'Account' to the left");
+		editAccount1.setFont(new Font("Arial", Font.PLAIN, 17));
+		
+		editAccount2.setBounds(408, 170, 1000, 80);
+		editAccount2.setText("of the window. This will take you to your account page."
+				+ " From there, select the 'Edit Account Information' button.");
+		editAccount2.setFont(new Font("Arial", Font.PLAIN, 17));
+		
+		/*
+		 * Creating the exit program instruction Label
+		 * */
+		exitInstructions.setBounds(210, 210, 1000, 80);
+		exitInstructions.setText("- Exit program: To exit Teacher Assistant, click the 'X' in the top right corner of the window.");
+		exitInstructions.setFont(new Font("Arial", Font.PLAIN, 17));
+		
+		
 		
 		/*
 		 * Making the log out Label clickable
@@ -212,6 +244,10 @@ public class Help_Frame implements ActionListener{
 		helpFrame.add(underline3);
 		helpFrame.add(logOutLabel);
 		helpFrame.add(underline4);
+		helpFrame.add(usingTALabel);
+		helpFrame.add(editAccount1);
+		helpFrame.add(editAccount2);
+		helpFrame.add(exitInstructions);
 		helpFrame.add(vertLine);
 		
 		/*
