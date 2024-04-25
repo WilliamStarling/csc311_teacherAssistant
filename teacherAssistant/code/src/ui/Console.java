@@ -14,11 +14,10 @@ public class Console {
 	 * 
 	 * @param args:
 	 */
-	 /*
+	 
 	public static void main(String[] args) {
 		MainMenu();
 	}
-	*/
 	
 	/*
 	 * This is the main menu that's called, which handles calling different functions to show options,
