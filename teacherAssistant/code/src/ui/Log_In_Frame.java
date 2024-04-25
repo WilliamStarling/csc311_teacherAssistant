@@ -51,7 +51,7 @@ public class Log_In_Frame implements ActionListener{
 		/*
 		 * Creating the Teacher Assistant Label above Login 
 		 * */
-		f_TA_Label.setBounds(490, 150, 400, 80);
+		f_TA_Label.setBounds(476, 150, 400, 80);
 		f_TA_Label.setText("Teacher Assistant");
 		f_TA_Label.setFont(new Font("Arial", Font.BOLD, 45));
 		f_TA_Label.setForeground(Color.BLUE);
@@ -96,21 +96,21 @@ public class Log_In_Frame implements ActionListener{
 		/*
 		 * Creating the account prompt Label under login 
 		 * */
-		f_accountPrompt.setBounds(568, 495, 260, 40);
+		f_accountPrompt.setBounds(563, 495, 260, 40);
 		f_accountPrompt.setText("Don't have an account yet?");
 		f_accountPrompt.setFont(new Font("Arial", Font.PLAIN, 18));
 		
 		/*
 		 * Building the 'create an account' button
 		 * */
-		f_createAccountButton.setBounds(575, 530, 200, 40);
+		f_createAccountButton.setBounds(572, 530, 200, 40);
 		f_createAccountButton.addActionListener(this);
 		f_createAccountButton.setFocusable(false);
 		f_createAccountButton.setFont(new Font("Arial", Font.PLAIN, 20));
 		f_createAccountButton.setForeground(Color.BLUE);
 		
 		//Creates a label for if the login information wasn't correct. added to the frame when login fails.
-		f_invalidLogin.setBounds(375, 450, 700, 40);
+		f_invalidLogin.setBounds(387, 450, 700, 40);
 		f_invalidLogin.setText("Invalid login, please check username and password and try again.");
 		f_invalidLogin.setFont(new Font("Arial", Font.PLAIN, 20));
 		f_invalidLogin.setForeground(Color.RED);

@@ -228,6 +228,79 @@ public class Help_Frame implements ActionListener{
 			}
 			
 		});
+		/*
+		 * Making the account Label clickable
+		 * */
+		accountLabel.addMouseListener(new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				helpFrame.dispose();
+				new Account_Frame(session, userName);
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				//PASS
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				//PASS
+				
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				//PASS
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				//PASS
+				
+			}
+			
+		});
+		/*
+		 * Making the classes Label clickable
+		 * */
+		classesLabel.addMouseListener(new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				helpFrame.dispose();
+				new Courses_Frame(session, userName);
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				//PASS
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				//PASS
+				
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				//PASS
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				//PASS
+				
+			}
+			
+		});
+		
 		
 		
 		
