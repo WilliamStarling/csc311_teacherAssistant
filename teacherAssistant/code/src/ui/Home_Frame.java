@@ -33,7 +33,7 @@ public class Home_Frame implements ActionListener {
 	
 	LinePanel vertLine = new LinePanel();
 	
-	Control session;
+	private Control f_session;
 
 	
 	Home_Frame(Control currentSession, String name){
@@ -146,7 +146,7 @@ public class Home_Frame implements ActionListener {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				homeFrame.dispose();
-				new Log_In_Frame(session);
+				new Log_In_Frame(f_session);
 				
 			}
 
