@@ -29,11 +29,11 @@ public class Log_In_Frame implements ActionListener{
 	JButton logInButton = new JButton("Log In");
 	JButton createAccountButton = new JButton("Create an account");
 	
-	Control session; //For storing the current control object that's being used.
+	private Control f_session; //For storing the current control object that's being used.
 	
 	Log_In_Frame(Control currentSession){
 		
-		session = currentSession;
+		f_session = currentSession;
 		
 		/*
 		 * Getting screen width and height for frame size
@@ -143,23 +143,28 @@ public class Log_In_Frame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		String accountName;
-		String accountPass;
+		String f_accountName;
+		String f_accountPass;
 		
 		
-		if((e.getSource() == logInButton) || (e.getSource() == userNameTextBox || e.getSource() == passwordTextBox)) {
-			accountName = userNameTextBox.getText();
-			accountPass = passwordTextBox.getText();
+		if((e.getSource() == logInButton) || e.getSource() == userNameTextBox || e.getSource() == passwordTextBox) {
+			f_accountName = userNameTextBox.getText();
+			f_accountPass = passwordTextBox.getText();
 			
-			if(session.login(accountName, accountPass)) {
+			if(f_session.login(f_accountName, f_accountPass)) {
 				frame1.dispose();
-				new Home_Frame(session, accountName, accountPass);
+				new Home_Frame(f_session, f_accountName, f_accountPass);
 			}
 			else {
 				frame1.add(invalidLogin);
 				frame1.repaint();
 			}
 			
+		}
+		else if(e.getSource() == createAccountButton)
+		{
+			frame1.dispose();
+			new CreateAccountFrame(f_session);
 		}
 	}
 }

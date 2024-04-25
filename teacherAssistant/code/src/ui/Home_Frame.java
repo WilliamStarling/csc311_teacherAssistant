@@ -31,11 +31,11 @@ public class Home_Frame implements ActionListener {
 	JLabel underline3 = new JLabel();
 	JLabel underline4 = new JLabel();
 	
-	Control session;
+	private Control f_session;
 
 	
 	Home_Frame(Control currentSession, String name, String pass){
-		session = currentSession;
+		f_session = currentSession;
 		
 		int screenWidth = 1366;
 		int screenHeight = 768;
@@ -131,7 +131,7 @@ public class Home_Frame implements ActionListener {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				homeFrame.dispose();
-				new Log_In_Frame(session);
+				new Log_In_Frame(f_session);
 				
 			}
 
