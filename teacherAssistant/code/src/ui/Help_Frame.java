@@ -12,46 +12,44 @@ import javax.swing.JLabel;
 
 import application.Control;
 
-public class Home_Frame implements ActionListener {
+public class Help_Frame implements ActionListener{
 	
 	public static String userName;
 	
-	JFrame homeFrame;
+	JFrame helpFrame;
 	
-	JLabel frameLabel = new JLabel();
+	JLabel helpPageLabel = new JLabel();
+	JLabel homeLabel = new JLabel();
 	JLabel accountLabel = new JLabel();
 	JLabel classesLabel = new JLabel();
-	JLabel helpLabel = new JLabel();
 	JLabel logOutLabel = new JLabel();
 	JLabel underline = new JLabel();
 	JLabel underline1 = new JLabel();
 	JLabel underline2 = new JLabel();
 	JLabel underline3 = new JLabel();
 	JLabel underline4 = new JLabel();
-	JLabel currentClasses = new JLabel();
-	JLabel recentActivity = new JLabel();
 	
 	LinePanel vertLine = new LinePanel();
 	
 	Control session;
-
 	
-	Home_Frame(Control currentSession, String name){
+	Help_Frame (Control currentSession, String name){
 		session = currentSession;
+		userName = name;
 		
 		int screenWidth = 1366;
 		int screenHeight = 768;
 		
 		userName = name;
 		
-		homeFrame = new JFrame("Teacher Assistant - " + userName);
+		helpFrame = new JFrame("Teacher Assistant - " + userName);
 		
 		/*
-		 * Creating the frame title Label
+		 * Creating the help page Label
 		 * */
-		frameLabel.setBounds(190, 30, 500, 80);
-		frameLabel.setText("Home");
-		frameLabel.setFont(new Font("Arial", Font.BOLD, 40));
+		helpPageLabel.setBounds(190, 30, 500, 80);
+		helpPageLabel.setText("Help Page");
+		helpPageLabel.setFont(new Font("Arial", Font.BOLD, 40));
 		
 		/*
 		 * Creating the underline Label
@@ -61,28 +59,28 @@ public class Home_Frame implements ActionListener {
 		underline.setFont(new Font("Arial", Font.PLAIN, 23));
 		
 		/*
-		 * Creating the account Label
+		 * Creating the home Label
 		 * */
-		accountLabel.setBounds(40, 100, 150, 80);
-		accountLabel.setText("Account");
-		accountLabel.setFont(new Font("Arial", Font.PLAIN, 23));
-		accountLabel.setForeground(Color.BLUE);
+		homeLabel.setBounds(40, 100, 150, 80);
+		homeLabel.setText("Home");
+		homeLabel.setFont(new Font("Arial", Font.PLAIN, 23));
+		homeLabel.setForeground(Color.BLUE);
 		
 		/*
 		 * Creating the underline1 Label
 		 * */
 		underline1.setBounds(40, 101, 150, 80);
-		underline1.setText("______");
+		underline1.setText("_____");
 		underline1.setFont(new Font("Arial", Font.PLAIN, 23));
 		underline1.setForeground(Color.BLUE);
 		
 		/*
-		 * Creating the classes Label
+		 * Creating the account Label
 		 * */
-		classesLabel.setBounds(40, 160, 150, 80);
-		classesLabel.setText("Classes");
-		classesLabel.setFont(new Font("Arial", Font.PLAIN, 23));
-		classesLabel.setForeground(Color.BLUE);
+		accountLabel.setBounds(40, 160, 150, 80);
+		accountLabel.setText("Account");
+		accountLabel.setFont(new Font("Arial", Font.PLAIN, 23));
+		accountLabel.setForeground(Color.BLUE);
 		
 		/*
 		 * Creating the underline2 Label
@@ -93,18 +91,18 @@ public class Home_Frame implements ActionListener {
 		underline2.setForeground(Color.BLUE);
 		
 		/*
-		 * Creating the help Label
+		 * Creating the classes Label
 		 * */
-		helpLabel.setBounds(40, 220, 150, 80);
-		helpLabel.setText("Help");
-		helpLabel.setFont(new Font("Arial", Font.PLAIN, 23));
-		helpLabel.setForeground(Color.BLUE);
+		classesLabel.setBounds(40, 220, 150, 80);
+		classesLabel.setText("Classes");
+		classesLabel.setFont(new Font("Arial", Font.PLAIN, 23));
+		classesLabel.setForeground(Color.BLUE);
 		
 		/*
 		 * Creating the underline3 Label
 		 * */
 		underline3.setBounds(40, 221, 150, 80);
-		underline3.setText("____");
+		underline3.setText("______");
 		underline3.setFont(new Font("Arial", Font.PLAIN, 23));
 		underline3.setForeground(Color.BLUE);
 		
@@ -123,21 +121,7 @@ public class Home_Frame implements ActionListener {
 		underline4.setText("______");
 		underline4.setFont(new Font("Arial", Font.PLAIN, 23));
 		underline4.setForeground(Color.BLUE);
-		
-		/*
-		 * Creating the current classes Label
-		 * */
-		currentClasses.setBounds(210, 115, 200, 80);
-		currentClasses.setText("Current Classes:");
-		currentClasses.setFont(new Font("Arial", Font.PLAIN, 25));
-		
-		
-		/*
-		 * Creating the recent activity Label
-		 * */
-		recentActivity.setBounds(210, 450, 200, 80);
-		recentActivity.setText("Recent Activity:");
-		recentActivity.setFont(new Font("Arial", Font.PLAIN, 25));
+			
 		
 		/*
 		 * Making the log out Label clickable
@@ -145,7 +129,7 @@ public class Home_Frame implements ActionListener {
 		logOutLabel.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				homeFrame.dispose();
+				helpFrame.dispose();
 				new Log_In_Frame(session);
 				
 			}
@@ -177,13 +161,13 @@ public class Home_Frame implements ActionListener {
 		});
 		
 		/*
-		 * Making the help Label clickable
+		 * Making the home Label clickable
 		 * */
-		helpLabel.addMouseListener(new MouseListener() {
+		homeLabel.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				homeFrame.dispose();
-				new Help_Frame(session, userName);
+				helpFrame.dispose();
+				new Home_Frame(session, userName);
 				
 			}
 
@@ -218,31 +202,29 @@ public class Home_Frame implements ActionListener {
 		/*
 		 * Adding everything to the frame
 		 * */
-		homeFrame.add(frameLabel);
-		homeFrame.add(underline);
-		homeFrame.add(accountLabel);
-		homeFrame.add(underline1);
-		homeFrame.add(classesLabel);
-		homeFrame.add(underline2);
-		homeFrame.add(helpLabel);
-		homeFrame.add(underline3);
-		homeFrame.add(logOutLabel);
-		homeFrame.add(underline4);
-		homeFrame.add(currentClasses);
-		homeFrame.add(recentActivity);
-		homeFrame.add(vertLine);
+		helpFrame.add(helpPageLabel);
+		helpFrame.add(underline);
+		helpFrame.add(homeLabel);
+		helpFrame.add(underline1);
+		helpFrame.add(accountLabel);
+		helpFrame.add(underline2);
+		helpFrame.add(classesLabel);
+		helpFrame.add(underline3);
+		helpFrame.add(logOutLabel);
+		helpFrame.add(underline4);
+		helpFrame.add(vertLine);
 		
 		/*
 		 * Frame Settings
 		 * */
-		homeFrame.setSize(screenWidth, screenHeight); //600 wide 400 high //setting window dimensions
-		homeFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		homeFrame.setResizable(false);
-		homeFrame.setLocationRelativeTo(null);
-		homeFrame.setVisible(true);
+		helpFrame.setSize(screenWidth, screenHeight); //600 wide 400 high //setting window dimensions
+		helpFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		helpFrame.setResizable(false);
+		helpFrame.setLocationRelativeTo(null);
+		helpFrame.setVisible(true);
 	}
-
 	
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
