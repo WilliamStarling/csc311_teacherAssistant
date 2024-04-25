@@ -40,17 +40,19 @@ public class Control {
 	public boolean createAccount(String username, String password) {
 		int size = f_userList.size(); // Number of users
 		for (int i = 0; i < size; i++) {
-			if (f_userList.get(i).getName() == username) {
+			System.out.println(f_userList.get(i).getName());
+			if (f_userList.get(i).getName().equals(username)) {
 				return false; // returns false if there's already a user with
 								// that username.
 			}
 		}
 
-		f_selectedTeacher = new Teacher(username, password); // Creates a new
-																// account and
+		f_selectedTeacher = new Teacher(username, password); // Creates a new											// account and
 																// sets it as
 																// the current
 																// user.
+		f_userList.add(f_selectedTeacher);
+		System.out.println("Size of list: " + f_userList.size());
 		return true;
 	}
 
@@ -73,7 +75,7 @@ public class Control {
 										// each user until a login matches.
 		{
 			currentTeacher = f_userList.get(i);
-			if (currentTeacher.getName() == username) {
+			if (currentTeacher.getName().equals(username)) {
 				if (currentTeacher.checkPassword(password)) {
 					f_selectedTeacher = currentTeacher;
 					return true;

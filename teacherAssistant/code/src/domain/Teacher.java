@@ -88,7 +88,7 @@ public class Teacher implements Serializable{
 	 */
 	public boolean checkPassword(String password)
 	{
-		if(password == f_password)
+		if(password.equals(f_password))
 		{
 			return true;
 		}
