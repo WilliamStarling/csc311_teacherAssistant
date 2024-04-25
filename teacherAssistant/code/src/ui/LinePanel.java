@@ -6,9 +6,14 @@ import java.awt.*;
 
 public class LinePanel extends JPanel{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public void paint(Graphics g) {
 		g.setColor(Color.GRAY);
-		g.drawLine(125, 0, 125, 768);
-		g.drawLine(145, 150, 2000, 150);
+		g.drawLine(145, 0, 145, 768);
+		//g.drawLine(160, 95, 1300, 95);
 	}
 }

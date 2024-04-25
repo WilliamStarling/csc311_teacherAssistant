@@ -170,7 +170,7 @@ public class CreateAccountFrame implements ActionListener{
 			if(f_accountPass.equals(f_passwordConf)) {
 				if(f_session.createAccount(f_accountName, f_accountPass)) {
 					frame1.dispose();
-					new Home_Frame(f_session, f_accountName, f_accountPass);
+					new Home_Frame(f_session, f_accountName);
 				} else {
 					frame1.add(f_userExists);
 					frame1.repaint();
