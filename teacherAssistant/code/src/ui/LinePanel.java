@@ -4,6 +4,10 @@ import javax.swing.JPanel;
 import java.awt.Graphics;
 import java.awt.*;
 
+/**
+ * 
+ * @author Savannah
+ */
 public class LinePanel extends JPanel{
 	
 	public void paint(Graphics g) {
