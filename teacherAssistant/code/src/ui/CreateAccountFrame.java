@@ -47,7 +47,7 @@ public class CreateAccountFrame implements ActionListener{
 		/*
 		 * Creating the Teacher Assistant Label above Login 
 		 * */
-		f_TA_Label.setBounds(490, 150, 400, 80);
+		f_TA_Label.setBounds(476, 150, 400, 80);
 		f_TA_Label.setText("Teacher Assistant");
 		f_TA_Label.setFont(new Font("Arial", Font.BOLD, 45));
 		f_TA_Label.setForeground(Color.BLUE);
@@ -69,7 +69,7 @@ public class CreateAccountFrame implements ActionListener{
 		/*
 		 * Creating the Password Label above password entry 
 		 * */
-		f_passwordLabel.setBounds(550, 315, 200, 40);
+		f_passwordLabel.setBounds(550, 325, 200, 40);//315
 		f_passwordLabel.setText("Password:");
 		f_passwordLabel.setFont(new Font("Arial", Font.PLAIN, 20));
 		f_passwordLabel.setForeground(Color.GRAY);
@@ -77,7 +77,7 @@ public class CreateAccountFrame implements ActionListener{
 		/*
 		 * Creating the Password confirmation text above password confirmation box 
 		 * */
-		f_passwordConfirm.setBounds(550, 390, 300, 40);
+		f_passwordConfirm.setBounds(550, 377, 300, 40);//390
 		f_passwordConfirm.setText("Confirm Password:");
 		f_passwordConfirm.setFont(new Font("Arial", Font.PLAIN, 20));
 		f_passwordConfirm.setForeground(Color.GRAY);
@@ -85,13 +85,13 @@ public class CreateAccountFrame implements ActionListener{
 		/*
 		 * Creating the Password entry 
 		 * */
-		f_passwordTextBox.setBounds(550, 345, 250, 28);//250 pixels long 28 high
+		f_passwordTextBox.setBounds(550, 355, 250, 28);//250 pixels long 28 high //345
 		f_passwordTextBox.addActionListener(this);
 		
 		/*
 		 * Creating the Password confirmation box 
 		 * */
-		f_passwordConfirmBox.setBounds(550, 420, 250, 28);//250 pixels long 28 high
+		f_passwordConfirmBox.setBounds(550, 407, 250, 28);//250 pixels long 28 high //420
 		f_passwordConfirmBox.addActionListener(this);
 		
 		/*
