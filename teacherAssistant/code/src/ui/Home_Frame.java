@@ -14,7 +14,7 @@ import application.Control;
 
 public class Home_Frame implements ActionListener {
 	
-	public static String userName;
+	public static String f_userName;
 	
 	JFrame homeFrame;
 	
@@ -37,14 +37,14 @@ public class Home_Frame implements ActionListener {
 
 	
 	Home_Frame(Control currentSession, String name){
-		session = currentSession;
+		f_session = currentSession;
 		
 		int screenWidth = 1366;
 		int screenHeight = 768;
 		
-		userName = name;
+		f_userName = name;
 		
-		homeFrame = new JFrame("Teacher Assistant - " + userName);
+		homeFrame = new JFrame("Teacher Assistant - " + f_userName);
 		
 		/*
 		 * Creating the frame title Label
@@ -183,7 +183,7 @@ public class Home_Frame implements ActionListener {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				homeFrame.dispose();
-				new Help_Frame(session, userName);
+				new Help_Frame(f_session, f_userName);
 				
 			}
 

@@ -153,7 +153,7 @@ public class Log_In_Frame implements ActionListener{
 			
 			if(f_session.login(f_accountName, f_accountPass)) {
 				frame1.dispose();
-				new Home_Frame(f_session, f_accountName, f_accountPass);
+				new Home_Frame(f_session, f_accountName);
 			}
 			else {
 				frame1.add(invalidLogin);
