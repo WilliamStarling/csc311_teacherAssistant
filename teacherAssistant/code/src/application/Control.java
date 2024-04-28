@@ -18,7 +18,7 @@ import foundation.Student;
  */
 public class Control {
 
-	private Teacher f_selectedTeacher;
+	private Teacher f_selectedTeacher = new Teacher("username", "password");
 	private ClassRoster f_selectedClass;
 	private Student f_selectedStudent;
 	private Assignment f_selectedAssignment;
@@ -189,7 +189,7 @@ public class Control {
 		assignmentInfo = f_selectedAssignment.getName() + "\n"
 				+ f_selectedAssignment.getType() + "\n"
 				+ f_selectedAssignment.getDueDate() + "\n"
-				+ f_selectedAssignment.getPossiblePoints()
+				+ f_selectedAssignment.getPossiblePoints() + "\n"
 				+ f_selectedAssignment.getDescription();
 		return assignmentInfo;
 	}
