@@ -24,5 +24,4 @@ public class Launch {
 		
 		new Log_In_Frame(newSession);
 	}
-	*/
 }
