@@ -13,41 +13,54 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class Log_In_Frame implements ActionListener{
-	
+/**
+ * This is the first window displayed when the program is started up. It prompts
+ * the user with login information, or to move to a window to make a new
+ * account.
+ * 
+ * @author Savannah and William
+ */
+public class Log_In_Frame implements ActionListener {
+
 	JFrame frame1 = new JFrame("Teacher Assistant");
-	
+
 	JLabel f_TA_Label = new JLabel();
 	JLabel f_userNameLabel = new JLabel();
 	JLabel f_passwordLabel = new JLabel();
 	JLabel f_accountPrompt = new JLabel();
 	JLabel f_invalidLogin = new JLabel();
-	
+
 	JTextField f_userNameTextBox = new JTextField();
 	JTextField f_passwordTextBox = new JTextField();
-	
+
 	JButton f_logInButton = new JButton("Log In");
 	JButton f_createAccountButton = new JButton("Create an account");
-	
-	private Control f_session; //For storing the current control object that's being used.
-	
-	Log_In_Frame(Control currentSession){
-		
+
+	private Control f_session; // For storing the current control object that's
+								// being used.
+
+	/**
+	 * This constructor designs the objects that will be displayed.
+	 * 
+	 * @param currentSession The current user session is passed through so
+	 *                       information can continue to be used.
+	 */
+	Log_In_Frame(Control currentSession) {
+
 		f_session = currentSession;
-		
+
 		/*
-		 * Getting screen width and height for frame size
-		 * Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		 * int screenHeight = screenSize.height;
-		 * int screenWidth = screenSize.width;
-		 * */
-		
+		 * Getting screen width and height for frame size Dimension screenSize =
+		 * Toolkit.getDefaultToolkit().getScreenSize(); int screenHeight =
+		 * screenSize.height; int screenWidth = screenSize.width;
+		 */
+
 		/*
 		 * Setting screen width and height 1366 X 768
-		 * */
+		 */
 		int screenWidth = 1366;
 		int screenHeight = 768;
-		
+
 		/*
 		 * Creating the Teacher Assistant Label above Login 
 		 * */
@@ -109,9 +122,11 @@ public class Log_In_Frame implements ActionListener{
 		f_createAccountButton.setFont(new Font("Arial", Font.PLAIN, 20));
 		f_createAccountButton.setForeground(Color.BLUE);
 		
-		//Creates a label for if the login information wasn't correct. added to the frame when login fails.
+		//Creates a label for if the login information wasn't correct. added to 
+		//the frame when login fails.
 		f_invalidLogin.setBounds(387, 450, 700, 40);
-		f_invalidLogin.setText("Invalid login, please check username and password and try again.");
+		f_invalidLogin.setText(
+				"Invalid login, please check username and password and try again.");
 		f_invalidLogin.setFont(new Font("Arial", Font.PLAIN, 20));
 		f_invalidLogin.setForeground(Color.RED);
 		
@@ -127,22 +142,25 @@ public class Log_In_Frame implements ActionListener{
 		frame1.add(f_passwordTextBox);
 		frame1.add(f_logInButton);
 		frame1.add(f_createAccountButton);
-		
+
 		/*
 		 * Frame Settings
-		 * */
-		frame1.setSize(screenWidth, screenHeight); //setting window dimensions
+		 */
+		frame1.setSize(screenWidth, screenHeight); // setting window dimensions
 		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame1.setResizable(false);
 		frame1.setLayout(null);
 		frame1.setLocationRelativeTo(null);
 		frame1.setVisible(true);
-		
+
 	}
 
+	/**
+	 * Performs the relevent actions when the frame is interacted with.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+
 		String f_accountName;
 		String f_accountPass;
 		
@@ -161,8 +179,7 @@ public class Log_In_Frame implements ActionListener{
 			}
 			
 		}
-		else if(e.getSource() == f_createAccountButton)
-		{
+		else if(e.getSource() == f_createAccountButton) {
 			frame1.dispose();
 			new CreateAccountFrame(f_session);
 		}

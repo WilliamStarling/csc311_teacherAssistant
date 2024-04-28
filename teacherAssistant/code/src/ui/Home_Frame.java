@@ -12,11 +12,18 @@ import javax.swing.JLabel;
 
 import application.Control;
 
+/**
+ * This is the home menu for the app. Displays the classes available to the
+ * user, as well as recently accessed objects.
+ * 
+ * @author Savannah
+ */
 public class Home_Frame implements ActionListener {
 	
 	public static String f_userName;
 	
 	JFrame homeFrame;
+	// = new JFrame("Teacher Assistant - Home");
 	
 	JLabel frameLabel = new JLabel();
 	JLabel accountLabel = new JLabel();
@@ -32,13 +39,20 @@ public class Home_Frame implements ActionListener {
 	JLabel recentActivity = new JLabel();
 	
 	LinePanel vertLine = new LinePanel();
-	
+
 	private Control f_session;
 
-	
-	Home_Frame(Control currentSession, String name){
+	/**
+	 * This puts together the frame, and designs the objects that will be
+	 * displayed.
+	 * 
+	 * @param currentSession The current control session in use, contains the
+	 *        relevent information for the current user.
+	 */
+	Home_Frame(Control currentSession, String name) {
+
 		f_session = currentSession;
-		
+
 		int screenWidth = 1366;
 		int screenHeight = 768;
 		
@@ -48,18 +62,18 @@ public class Home_Frame implements ActionListener {
 		
 		/*
 		 * Creating the frame title Label
-		 * */
+		 */
 		frameLabel.setBounds(190, 30, 500, 80);
 		frameLabel.setText("Home");
 		frameLabel.setFont(new Font("Arial", Font.BOLD, 40));
-		
+
 		/*
 		 * Creating the underline Label
 		 * */
 		underline.setBounds(185, 35, 1050, 80);
 		underline.setText("_______________________________________________________________________________");
 		underline.setFont(new Font("Arial", Font.PLAIN, 23));
-		
+
 		/*
 		 * Creating the account Label
 		 * */
@@ -67,7 +81,7 @@ public class Home_Frame implements ActionListener {
 		accountLabel.setText("Account");
 		accountLabel.setFont(new Font("Arial", Font.PLAIN, 23));
 		accountLabel.setForeground(Color.BLUE);
-		
+
 		/*
 		 * Creating the underline1 Label
 		 * */
@@ -75,7 +89,7 @@ public class Home_Frame implements ActionListener {
 		underline1.setText("______");
 		underline1.setFont(new Font("Arial", Font.PLAIN, 23));
 		underline1.setForeground(Color.BLUE);
-		
+
 		/*
 		 * Creating the classes Label
 		 * */
@@ -83,7 +97,7 @@ public class Home_Frame implements ActionListener {
 		classesLabel.setText("Classes");
 		classesLabel.setFont(new Font("Arial", Font.PLAIN, 23));
 		classesLabel.setForeground(Color.BLUE);
-		
+
 		/*
 		 * Creating the underline2 Label
 		 * */
@@ -91,7 +105,7 @@ public class Home_Frame implements ActionListener {
 		underline2.setText("______");
 		underline2.setFont(new Font("Arial", Font.PLAIN, 23));
 		underline2.setForeground(Color.BLUE);
-		
+
 		/*
 		 * Creating the help Label
 		 * */
@@ -99,7 +113,7 @@ public class Home_Frame implements ActionListener {
 		helpLabel.setText("Help");
 		helpLabel.setFont(new Font("Arial", Font.PLAIN, 23));
 		helpLabel.setForeground(Color.BLUE);
-		
+
 		/*
 		 * Creating the underline3 Label
 		 * */
@@ -107,7 +121,7 @@ public class Home_Frame implements ActionListener {
 		underline3.setText("____");
 		underline3.setFont(new Font("Arial", Font.PLAIN, 23));
 		underline3.setForeground(Color.BLUE);
-		
+
 		/*
 		 * Creating the log out Label
 		 * */
@@ -115,7 +129,7 @@ public class Home_Frame implements ActionListener {
 		logOutLabel.setText("Log Out");
 		logOutLabel.setFont(new Font("Arial", Font.PLAIN, 23));
 		logOutLabel.setForeground(Color.BLUE);
-		
+
 		/*
 		 * Creating the underline4 Label
 		 * */
@@ -123,7 +137,7 @@ public class Home_Frame implements ActionListener {
 		underline4.setText("______");
 		underline4.setFont(new Font("Arial", Font.PLAIN, 23));
 		underline4.setForeground(Color.BLUE);
-		
+
 		/*
 		 * Creating the current classes Label
 		 * */
@@ -141,39 +155,39 @@ public class Home_Frame implements ActionListener {
 		
 		/*
 		 * Making the log out Label clickable
-		 * */
+		 */
 		logOutLabel.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				homeFrame.dispose();
 				new Log_In_Frame(f_session);
-				
+
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				//PASS
-				
+				// PASS
+
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				//PASS
-				
+				// PASS
+
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				//PASS
-				
+				// PASS
+
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				//PASS
-				
+				// PASS
+
 			}
-			
+
 		});
 		
 		/*
@@ -213,85 +227,10 @@ public class Home_Frame implements ActionListener {
 			
 		});
 		
-		/*
-		 * Making the account Label clickable
-		 * */
-		accountLabel.addMouseListener(new MouseListener() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				homeFrame.dispose();
-				new Account_Frame(f_session, f_userName);
-				
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				//PASS
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				//PASS
-				
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				//PASS
-				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				//PASS
-				
-			}
-			
-		});
-		
-		/*
-		 * Making the classes Label clickable
-		 * */
-		classesLabel.addMouseListener(new MouseListener() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				homeFrame.dispose();
-				new Courses_Frame(f_session, f_userName);
-				
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				//PASS
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				//PASS
-				
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				//PASS
-				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				//PASS
-				
-			}
-			
-		});
-		
-		
 		
 		/*
 		 * Adding everything to the frame
-		 * */
+		 */
 		homeFrame.add(frameLabel);
 		homeFrame.add(underline);
 		homeFrame.add(accountLabel);
@@ -305,22 +244,26 @@ public class Home_Frame implements ActionListener {
 		homeFrame.add(currentClasses);
 		homeFrame.add(recentActivity);
 		homeFrame.add(vertLine);
-		
 		/*
 		 * Frame Settings
-		 * */
-		homeFrame.setSize(screenWidth, screenHeight); //600 wide 400 high //setting window dimensions
+		 */
+		homeFrame.setSize(screenWidth, screenHeight); // 600 wide 400 high
+														// //setting window
+														// dimensions
 		homeFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		homeFrame.setResizable(false);
 		homeFrame.setLocationRelativeTo(null);
 		homeFrame.setVisible(true);
 	}
 
-	
+	/**
+	 * This actionlistner class will perform the relevent actions when buttons
+	 * are pressed or text boxes are entered.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
