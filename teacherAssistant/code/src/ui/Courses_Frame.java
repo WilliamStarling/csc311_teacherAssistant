@@ -29,7 +29,7 @@ public class Courses_Frame implements ActionListener {
 	JLabel underline2 = new JLabel();
 	JLabel underline3 = new JLabel();
 	JLabel underline4 = new JLabel();
-	JLabel noCurrClasses = new JLabel();
+	JLabel noClasses = new JLabel();
 	
 	
 	LinePanel vertLine = new LinePanel();
@@ -129,10 +129,10 @@ public class Courses_Frame implements ActionListener {
 		/*
 		 * Creating the no current classes Label
 		 * */
-		noCurrClasses.setBounds(610, 250, 230, 80);
-		noCurrClasses.setText("**No current classes**");
-		noCurrClasses.setFont(new Font("Arial", Font.ITALIC, 22));
-		noCurrClasses.setForeground(Color.GRAY);
+		noClasses.setBounds(455, 250, 515, 80);
+		noClasses.setText("**There are currently no classes in your class list**");
+		noClasses.setFont(new Font("Arial", Font.ITALIC, 22));
+		noClasses.setForeground(Color.GRAY);
 		
 		/*
 		 * Making the home Label clickable
@@ -297,7 +297,7 @@ public class Courses_Frame implements ActionListener {
 		coursesFrame.add(underline4);
 		
 		if (f_session.viewClasses() == null) {
-			coursesFrame.add(noCurrClasses);
+			coursesFrame.add(noClasses);
 		}
 		else {
 			//add class list to frame
