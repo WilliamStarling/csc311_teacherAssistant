@@ -325,6 +325,11 @@ public class Account_Frame implements ActionListener {
 			new Courses_Frame(f_session, f_userName);
 		}
 		
+		if(e.getSource() == f_editAccountButton) {
+			accountFrame.dispose();
+			new Edit_Account_Frame(f_session, f_userName);
+		}
+		
 	}
 
 }
