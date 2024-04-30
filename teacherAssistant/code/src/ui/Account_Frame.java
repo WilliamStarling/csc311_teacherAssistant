@@ -15,7 +15,7 @@ import application.Control;
 
 public class Account_Frame implements ActionListener {
 	
-	Control session;
+	Control f_session;
 	public static String f_userName;
 	
 	JFrame accountFrame;
@@ -38,7 +38,7 @@ public class Account_Frame implements ActionListener {
 	
 	Account_Frame(Control currentSession, String f_name){
 		
-		session = currentSession;
+		f_session = currentSession;
 		f_userName = f_name;
 		
 		int f_screenWidth = 1366;
@@ -148,7 +148,7 @@ public class Account_Frame implements ActionListener {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				accountFrame.dispose();
-				new Log_In_Frame(session);
+				new Log_In_Frame(f_session);
 				
 			}
 
@@ -185,7 +185,7 @@ public class Account_Frame implements ActionListener {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				accountFrame.dispose();
-				new Home_Frame(session, f_userName);
+				new Home_Frame(f_session, f_userName);
 				
 			}
 
@@ -221,7 +221,7 @@ public class Account_Frame implements ActionListener {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				accountFrame.dispose();
-				new Help_Frame(session, f_userName);
+				new Help_Frame(f_session, f_userName);
 				
 			}
 
@@ -257,7 +257,7 @@ public class Account_Frame implements ActionListener {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				accountFrame.dispose();
-				new Courses_Frame(session, f_userName);
+				new Courses_Frame(f_session, f_userName);
 				
 			}
 
@@ -319,7 +319,11 @@ public class Account_Frame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		
+		if(e.getSource() == f_classesButton) {
+			accountFrame.dispose();
+			new Courses_Frame(f_session, f_userName);
+		}
 		
 	}
 

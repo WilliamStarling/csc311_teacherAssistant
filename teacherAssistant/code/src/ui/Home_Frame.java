@@ -36,7 +36,9 @@ public class Home_Frame implements ActionListener {
 	JLabel underline3 = new JLabel();
 	JLabel underline4 = new JLabel();
 	JLabel currentClasses = new JLabel();
+	JLabel noCurrClasses = new JLabel();
 	JLabel recentActivity = new JLabel();
+	JLabel noRecentActivity = new JLabel();
 	
 	LinePanel vertLine = new LinePanel();
 
@@ -145,6 +147,13 @@ public class Home_Frame implements ActionListener {
 		currentClasses.setText("Current Classes:");
 		currentClasses.setFont(new Font("Arial", Font.PLAIN, 25));
 		
+		/*
+		 * Creating the no current classes Label
+		 * */
+		noCurrClasses.setBounds(240, 190, 230, 80);
+		noCurrClasses.setText("**No current classes**");
+		noCurrClasses.setFont(new Font("Arial", Font.ITALIC, 22));
+		noCurrClasses.setForeground(Color.GRAY);
 		
 		/*
 		 * Creating the recent activity Label
@@ -152,6 +161,14 @@ public class Home_Frame implements ActionListener {
 		recentActivity.setBounds(210, 450, 200, 80);
 		recentActivity.setText("Recent Activity:");
 		recentActivity.setFont(new Font("Arial", Font.PLAIN, 25));
+		
+		/*
+		 * Creating the no recent activity Label
+		 * */
+		noRecentActivity.setBounds(240, 525, 230, 80);
+		noRecentActivity.setText("**No recent activity**");
+		noRecentActivity.setFont(new Font("Arial", Font.ITALIC, 22));
+		noRecentActivity.setForeground(Color.GRAY);
 		
 		/*
 		 * Making the log out Label clickable
@@ -227,6 +244,80 @@ public class Home_Frame implements ActionListener {
 			
 		});
 		
+		/*
+		 * Making the account Label clickable
+		 */
+	accountLabel.addMouseListener(new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				homeFrame.dispose();
+				new Account_Frame(f_session, f_userName);
+
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// PASS
+
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// PASS
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// PASS
+
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// PASS
+
+			}
+
+		});
+	
+		/*
+		 * Making the Classes Label clickable
+		 */
+	classesLabel.addMouseListener(new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				homeFrame.dispose();
+				new Courses_Frame(f_session, f_userName);
+	
+			}
+	
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// PASS
+	
+			}
+	
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// PASS
+	
+			}
+	
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// PASS
+	
+			}
+	
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// PASS
+	
+			}
+	
+		});
+		
 		
 		/*
 		 * Adding everything to the frame
@@ -243,7 +334,18 @@ public class Home_Frame implements ActionListener {
 		homeFrame.add(underline4);
 		homeFrame.add(currentClasses);
 		homeFrame.add(recentActivity);
+		if (f_session.viewClasses() == null) {
+			homeFrame.add(noCurrClasses);
+		}
+		else {
+			//add class list to frame
+		}
+		homeFrame.add(noRecentActivity);
+		
 		homeFrame.add(vertLine);
+			
+		
+		
 		/*
 		 * Frame Settings
 		 */

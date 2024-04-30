@@ -65,6 +65,9 @@ public class Teacher implements Serializable{
 	 */
 	public TreeMap getClassList()
 	{
+		if (f_classList.isEmpty()) {
+			return null;
+		}
 		return f_classList;
 	}
 	

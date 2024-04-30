@@ -127,8 +127,11 @@ public class Control {
 	 * 
 	 * @return returns a string of the classes available.
 	 */
-	public String viewClasses() {
-		return "no";
+	public TreeMap<String, ClassRoster> viewClasses() {
+		if (f_selectedTeacher.getClassList() == null) {
+			return null;
+		}
+		return f_selectedTeacher.getClassList();
 	}
 
 	/**
