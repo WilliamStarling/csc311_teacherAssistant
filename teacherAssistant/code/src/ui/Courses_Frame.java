@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -14,7 +15,7 @@ import application.Control;
 
 public class Courses_Frame implements ActionListener {
 	
-	public static String userName;
+	public static String f_userName;
 	
 	JFrame coursesFrame;
 	
@@ -28,22 +29,24 @@ public class Courses_Frame implements ActionListener {
 	JLabel underline2 = new JLabel();
 	JLabel underline3 = new JLabel();
 	JLabel underline4 = new JLabel();
+	JLabel noClasses = new JLabel();
+	
 	
 	LinePanel vertLine = new LinePanel();
 	
-	Control session;
+	Control f_session;
 	
 	Courses_Frame(Control f_currentSession, String f_name){
 		
-		session = f_currentSession;
-		userName = f_name;
+		f_session = f_currentSession;
+		f_userName = f_name;
 		
 		int screenWidth = 1366;
 		int screenHeight = 768;
 		
-		userName = f_name;
+		f_userName = f_name;
 		
-		coursesFrame = new JFrame("Teacher Assistant - " + userName);
+		coursesFrame = new JFrame("Teacher Assistant - " + f_userName);
 		
 		/*
 		 * Creating the help page Label
@@ -124,13 +127,21 @@ public class Courses_Frame implements ActionListener {
 		underline4.setForeground(Color.BLUE);
 		
 		/*
+		 * Creating the no current classes Label
+		 * */
+		noClasses.setBounds(455, 250, 515, 80);
+		noClasses.setText("**There are currently no classes in your class list**");
+		noClasses.setFont(new Font("Arial", Font.ITALIC, 22));
+		noClasses.setForeground(Color.GRAY);
+		
+		/*
 		 * Making the home Label clickable
 		 * */
 		homeLabel.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				coursesFrame.dispose();
-				new Home_Frame(session, userName);
+				new Home_Frame(f_session, f_userName);
 				
 			}
 
@@ -166,7 +177,7 @@ public class Courses_Frame implements ActionListener {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				coursesFrame.dispose();
-				new Account_Frame(session, userName);
+				new Account_Frame(f_session, f_userName);
 				
 			}
 
@@ -203,7 +214,7 @@ public class Courses_Frame implements ActionListener {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				coursesFrame.dispose();
-				new Help_Frame(session, userName);
+				new Help_Frame(f_session, f_userName);
 				
 			}
 
@@ -240,7 +251,7 @@ public class Courses_Frame implements ActionListener {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				coursesFrame.dispose();
-				new Log_In_Frame(session);
+				new Log_In_Frame(f_session);
 				
 			}
 
@@ -284,6 +295,15 @@ public class Courses_Frame implements ActionListener {
 		coursesFrame.add(underline3);
 		coursesFrame.add(logOutLabel);
 		coursesFrame.add(underline4);
+		
+		if (f_session.viewClasses() == null) {
+			coursesFrame.add(noClasses);
+		}
+		else {
+			//add class list to frame
+		}
+		
+		
 		coursesFrame.add(vertLine);
 		
 		/*
