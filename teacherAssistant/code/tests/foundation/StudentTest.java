@@ -4,6 +4,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+/**
+ * StudentTest.java is for testing methods within the student class
+ * 
+ * @author Savannah
+ */
+
 class StudentTest {
 	
 	Student person = new Student("Example Student");
@@ -20,6 +26,9 @@ class StudentTest {
 		boolean check = false;
 		if(person.getAbsences() == 0) {
 			check = true;
+		}
+		else {
+			assert(check);
 		}
 		
 		person.setAbsences(5);
@@ -63,5 +72,17 @@ class StudentTest {
 					person.setAbsences(-1);
 				});
 	}
+	
+	/*
+	 * Tests the that the setName() method in the Student Class sets the name correctly.
+	 * 
+	 * */
+	@Test
+	void setNameTest() {
+		
+		person.setName("New Name");
+		assertEquals("New Name", person.getName());
+	}
+	
 	
 }
