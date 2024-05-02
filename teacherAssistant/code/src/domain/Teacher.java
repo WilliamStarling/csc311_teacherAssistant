@@ -13,7 +13,7 @@ import foundation.Assignment;
  */
 public class Teacher implements Serializable{
 
-	public String f_username;
+	private String f_username;
 	private String f_password;
 	private String userID;
 	private TreeMap<String, ClassRoster> f_classList = new TreeMap();
