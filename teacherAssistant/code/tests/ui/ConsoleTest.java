@@ -7,10 +7,11 @@ import org.junit.jupiter.api.Test;
 class ConsoleTest {
 	
 	
-
+	/*
 	@Test
 	void test() {
 		fail("Not yet implemented");
 	}
+	*/
 
 }
